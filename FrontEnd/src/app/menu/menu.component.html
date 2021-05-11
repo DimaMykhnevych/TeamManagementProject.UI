@@ -1,0 +1,109 @@
+<nav class="menu">
+  <mat-expansion-panel
+    hideToggle="true"
+    class="expansionPanel"
+    *ngFor="let groupedArticle of groupedArticles; let i = index"
+  >
+    <mat-expansion-panel-header
+      [expandedHeight]="'70px'"
+      (click)="click(i)"
+      [collapsedHeight]="'70px'"
+      [ngClass]="{ headerBorder: boolToggled[i] }"
+    >
+      <div class="imgblock">
+        <mat-panel-title>
+          <img
+            *ngIf="boolToggled[i]"
+            src="../../assets/images/point-selected@3x.png"
+            class="image titleImage"
+          />
+          <img
+            *ngIf="!boolToggled[i]"
+            src="../../assets/images/point@3x.png"
+            class="image titleImage"
+          />
+        </mat-panel-title>
+        <mat-panel-description class="matPanelDesc descForImages">
+          <p [ngClass]="{ redText: boolToggled[i] }" class="description">
+            {{ groupedArticle.tag }}
+          </p>
+        </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <a
+      [routerLink]="['/article', article.id]"
+      *ngFor="let article of groupedArticle.articles; let j = index"
+      class="extendedElem"
+      [ngClass]="{ extendedFirst: j == 0 }"
+      >{{ article.name }}</a
+    >
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    [expanded]="userArticlesToggle"
+    *ngIf="isAdmin"
+    hideToggle="true"
+    class="expansionPanel"
+  >
+    <mat-expansion-panel-header
+      [expandedHeight]="'70px'"
+      (click)="clickUserArticle()"
+      [collapsedHeight]="'70px'"
+    >
+      <div class="imgblock">
+        <mat-panel-title>
+          <img
+            *ngIf="userArticlesToggle"
+            src="../../assets/images/point-selected@3x.png"
+            class="image titleImage"
+          />
+          <img
+            *ngIf="!userArticlesToggle"
+            src="../../assets/images/point@3x.png"
+            class="image titleImage"
+          />
+        </mat-panel-title>
+        <mat-panel-description class="matPanelDesc descForImages">
+          <p [ngClass]="{ redText: userArticlesToggle }" class="description">
+            My Articles
+          </p>
+        </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <a
+      [routerLink]="['/article', article.id]"
+      *ngFor="let article of userArticles; let j = index"
+      class="extendedElem"
+      [ngClass]="{ extendedFirst: j == 0 }"
+      >{{ article.name }}</a
+    >
+  </mat-expansion-panel>
+  <a routerLink="/how-to-articles">
+    <mat-expansion-panel hideToggle="true" class="expansionPanel" disabled>
+      <mat-expansion-panel-header
+        [expandedHeight]="'70px'"
+        [collapsedHeight]="'70px'"
+      >
+        <mat-panel-title class="matPanelDesc matTitle">
+          <p>How-To Articles</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </a>
+  <a routerLink="/admin" *ngIf="isAdmin">
+    <mat-expansion-panel hideToggle="true" class="expansionPanel" disabled>
+      <mat-expansion-panel-header
+        [expandedHeight]="'70px'"
+        [collapsedHeight]="'70px'"
+      >
+        <mat-panel-title class="matPanelDesc matTitle matUsers">
+          <p>Users</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </a>
+  <a routerLink="/createarticle" *ngIf="isAdmin">
+    <button mat-raised-button class="md-button" color="primary">
+      Add New Article
+    </button>
+  </a>
+</nav>

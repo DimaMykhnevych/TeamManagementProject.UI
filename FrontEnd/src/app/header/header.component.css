@@ -1,0 +1,62 @@
+:host {
+    height: 60px;
+    background-color: var(--dark-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Helvetica-Neue;
+    margin-right: 25px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.fullname {
+    margin-left: 50px;
+    color: white;
+    font-weight: 100;
+    font-family: Helvetica-Neue-Light;
+    font-size: 15px;
+}
+
+.search {
+    width: 255px;
+    height: 32px;
+}
+
+.rightheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form.searchForm input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    float: left;
+    width: 90%;
+    background: var(--light-grey);
+    height: 33px;
+    border: none;
+}
+
+form.searchForm button {
+    float: left;
+    width: 10%;
+    border: none; 
+    height: 33px;
+    cursor: pointer;
+    background-color: var(--light-grey);
+    background-image: url(../../assets/images/search-icon-grey.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+*,*:focus,*:hover {
+    outline: none;
+}

@@ -1,0 +1,21 @@
+<h1 *ngIf="!article; else articleBlock">
+    {{ article === null ? 'The article was not found (' : ''}}
+</h1>
+
+<ng-template #articleBlock>
+    <div class="header">
+        <div>
+            <h1>{{article.name}}</h1>
+            <p class="smaller">
+                {{article.dateOfPublishing | date: "shortDate"}}
+                {{article.publisherFullName}}
+            </p>
+        </div>
+        <div *ngIf="article.isMadeByUser" class="actionContainer">
+            <button id="edit" (click)="onEdit()"></button>
+            <button id="delete" (click)="onDelete()" [disabled]="deleting"></button>
+        </div>
+    </div>
+
+    <article [innerHTML]="article.content | safeHtml"></article>
+</ng-template>

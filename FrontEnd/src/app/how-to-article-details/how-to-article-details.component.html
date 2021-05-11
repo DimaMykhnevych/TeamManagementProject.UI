@@ -1,0 +1,24 @@
+<h4>
+    {{ title }}
+</h4>
+
+<hr>
+
+<form id="article_form" (ngSubmit)="onSave()" [formGroup]="form" ngNativeValidate>
+    <label for="article_name">How-To Article Name</label>
+    <input type="text" id="article_name" [formControlName]="'name'" autocomplete="off"
+        required maxlength="60">
+
+    <label for="article_problem">Problem</label>
+    <textarea id="article_problem" rows="5" [formControlName]="'problem'" required></textarea>
+
+    <label for="article_solution">Solution</label>
+    <textarea id="article_solution" rows="5" [formControlName]="'solution'" required></textarea>
+</form>
+
+<div class="dialogActions">
+    <button type="submit" form="article_form" [disabled]="processing">
+        {{ this.processing ? "Saving..." : "Save" }}
+    </button>
+    <button mat-dialog-close>Cancel</button>
+</div>

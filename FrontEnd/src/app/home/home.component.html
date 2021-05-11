@@ -1,0 +1,41 @@
+<h1 class="caption">Welcome to Team Management</h1>
+<div class="menu">
+  <div
+    class="extendedItem"
+    *ngFor="let groupedArticle of groupedArticles; let i = index"
+  >
+    <div
+      class="menuItem mat-elevation-z8"
+      [style.background-color]="getColor(i)"
+      (mouseenter)="showDiv(i)"
+      (mouseleave)="closeMe(i)"
+    >
+      <h1 class="menuItemCaption">{{ groupedArticle?.tag }}</h1>
+    </div>
+    <div
+      class="expandedItem"
+      [@divState]="divStates[i]"
+      (mouseenter)="showDiv(i)"
+      (mouseleave)="closeMe(i)"
+    >
+      <ul>
+        <a
+          [routerLink]="['/article', article.id]"
+          *ngFor="let article of groupedArticle.articles"
+        >
+          <li class="articlesName">{{ article?.name }}</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div class="extendedItem">
+    <a routerLink="/how-to-articles">
+      <div
+        class="menuItem mat-elevation-z8"
+        [style.background-color]="getColor(groupedArticles.length)"
+      >
+        <h1 class="menuItemCaption">How-To Articles</h1>
+      </div>
+    </a>
+  </div>
+</div>

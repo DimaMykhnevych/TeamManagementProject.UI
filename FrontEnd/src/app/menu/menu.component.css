@@ -1,0 +1,85 @@
+:host {
+    display: flex;
+    background: var(--medium-grey);
+}
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.imgblock {
+    height: 100%;
+    width: 100%;
+}
+.image {
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+.mat-expansion-panel {
+    border-radius: 0;
+    width: 100%;
+}
+mat-panel-title {
+    display: inline-block;
+}
+.titleImage {
+    margin-left: 10px;
+}
+.matPanelDesc {
+    font-size: 18px;
+    color: black !important;
+    display: inline-block;
+}
+.mat-expansion-panel-header {
+    font-family: Helvetica-Neue-Medium;
+    vertical-align: middle;
+}
+.extendedElem {
+    display: block;
+    margin-top: 2px;
+    margin-left: 15px;
+    font-size: 14px;
+    font-family: Helvetica-Neue-Medium;
+    cursor: pointer;
+    color: black;
+}
+
+.extendedElem:hover {
+    color: var(--orange);
+}
+
+.expansionPanel {
+    margin-top: 3px;
+}
+.headerBorder {
+    border-bottom: 1px solid var(--medium-grey);
+}
+.redText {
+    color: var(--orange);
+}
+.extendedFirst {
+    margin-top: 13px;
+}
+.description {
+    position: relative;
+    bottom: 8px;
+}
+.matTitle {
+    margin-left: 10px;
+    width: 100%
+}
+.md-button {
+  padding: 6px 0 6px 32px;
+  font-size:17px;
+  width: 100%;
+  text-align: start;
+  margin-top:3px;
+  height: 70px;
+  border-radius: 0;
+  background-color: #3b3a3c;
+}
+.md-button:hover {
+  background-color: #f47038;
+}

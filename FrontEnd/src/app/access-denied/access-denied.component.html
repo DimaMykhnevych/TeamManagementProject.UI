@@ -1,0 +1,14 @@
+<h1>Access denied!</h1>
+<hr>
+
+<ng-container [ngSwitch]="reason">
+    <p *ngSwitchCase="AccessDeniedReasonEnumRef.Unauthenticated">
+        Please, log in or register with your '@gmail.com' account!
+    </p>
+    <p *ngSwitchCase="AccessDeniedReasonEnumRef.Unauthorized">
+        Unfortunately, you don't have access to the resource you are requesting :(
+    </p>
+    <p *ngSwitchCase="AccessDeniedReasonEnumRef.Unknown">
+        Something went wrong :( Please contact the owners of the site.
+    </p>
+</ng-container>

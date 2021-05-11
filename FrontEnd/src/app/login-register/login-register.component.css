@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 0.2em 1em;
+    background-color: var(--dark-grey);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+button:hover {
+    background-color: var(--orange);
+}

@@ -1,0 +1,27 @@
+
+<div class="articleCreationFormBlock">
+  <h4>
+    {{title}}
+  </h4>
+  <hr/>
+  <form #myForm="ngForm" [formGroup]="articleForm" *ngIf="articleForm" ngNativeValidate>
+    <label>Title</label>
+    <input formControlName="name" type="text" required>
+    <label>Tag</label>
+    <div class="tagBlock">
+      <select #select formControlName="tagId" class="tagSelect" matInput required>
+        <option *ngFor="let tag of tags" [value]=tag.id>{{tag.label}}</option>
+      </select>
+      <button type="button" (click)="openDialog()" mat-raised-button class="md-button tagButton" color="primary">Add Tag</button>
+    </div>
+    <label>Status</label>
+    <select formControlName="status" matInput required>
+      <option value="Published">Published</option>
+      <option value="Draft">Draft</option>
+    </select>
+    <label>Content</label>
+    <ckeditor [editor]="Editor" formControlName="content" class="ckeditor" [config]="config"></ckeditor>
+    <button mat-raised-button class="md-button" (click)="save(myForm)" color="primary">{{ this.saving ? "Saving..." : "Save" }}</button>
+  </form>
+</div>
+
