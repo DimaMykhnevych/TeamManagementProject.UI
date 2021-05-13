@@ -35,6 +35,7 @@ import { TagCreationComponent } from './tag-creation/tag-creation.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
+import { CompanyRegistrationModule } from './company-registration/company-registration.module';
 
 @NgModule({
   declarations: [
@@ -74,9 +75,10 @@ import { AuthorizedMainComponent } from './authorized-main/authorized-main.compo
     MatInputModule,
     MatSelectModule,
     CKEditorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    CompanyRegistrationModule,
   ],
   providers: [ArticlesService, TagsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

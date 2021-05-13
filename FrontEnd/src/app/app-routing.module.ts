@@ -11,9 +11,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
+import { CompanyRegistrationPageComponent } from './company-registration/components/company-registration-page/company-registration-page.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
+  { path: 'company-registration', component: CompanyRegistrationPageComponent },
   {
     path: '',
     component: AuthorizedMainComponent,
