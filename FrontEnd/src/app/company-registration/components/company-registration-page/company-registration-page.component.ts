@@ -28,8 +28,16 @@ export class CompanyRegistrationPageComponent implements OnInit {
       domain: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$'),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(
+          '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$_!%*?&])[A-Za-z\\d@$_!%*?&]{7,}$'
+        ),
+      ]),
     });
   }
   get companyName() {

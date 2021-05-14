@@ -28,7 +28,18 @@
   transition: all 0.3s linear;
 }
 
+.nav-btn2 {
+  width: 140px;
+  border: 1px solid rgb(244, 112, 56);
+  color: rgb(244, 112, 56);
+  transition: all 0.3s linear;
+}
+
 .nav-btn1:hover {
+  color: #ffff;
+  background-color: rgb(244, 112, 56);
+}
+.nav-btn2:hover {
   color: #ffff;
   background-color: rgb(244, 112, 56);
 }
@@ -39,11 +50,7 @@
 }
 
 .footer {
-  background: linear-gradient(180deg, #b98e7d, #bdbec0);
-  /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around; */
+  background: linear-gradient(180deg, #505250, #8e8f91);
 }
 
 @media all and (max-width: 937px) {
@@ -54,6 +61,10 @@
   }
 
   .nav-btn1 {
+    width: auto;
+  }
+
+  .nav-btn2 {
     width: auto;
   }
 
