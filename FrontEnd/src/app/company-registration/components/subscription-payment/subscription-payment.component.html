@@ -34,10 +34,11 @@
   </div>
   <div class="container main mb-4">
     <h2 class="text-center main-heading p-3">Payment for subscription</h2>
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-around">
       <div class="col-lg-6 form-wrapper d-flex justify-content-center py-3">
         <form [formGroup]="form" (submit)="onSubmit()"></form>
       </div>
+      <div class="plan-info col-lg-5"></div>
     </div>
   </div>
   <div class="footer" style="width: 100%">
