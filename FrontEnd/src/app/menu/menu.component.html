@@ -89,6 +89,18 @@
       </mat-expansion-panel-header>
     </mat-expansion-panel>
   </a>
+  <a routerLink="/viewPolls" >
+    <mat-expansion-panel hideToggle="true" class="expansionPanel" disabled>
+      <mat-expansion-panel-header
+        [expandedHeight]="'70px'"
+        [collapsedHeight]="'70px'"
+      >
+        <mat-panel-title class="matPanelDesc matTitle matUsers">
+          <p>Polls</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </a>
   <a routerLink="/admin" *ngIf="isAdmin">
     <mat-expansion-panel hideToggle="true" class="expansionPanel" disabled>
       <mat-expansion-panel-header
@@ -104,6 +116,11 @@
   <a routerLink="/createarticle" *ngIf="isAdmin">
     <button mat-raised-button class="md-button" color="primary">
       Add New Article
+    </button>
+  </a>
+  <a routerLink="/createpoll" *ngIf="isAdmin">
+    <button mat-raised-button class="md-button" color="primary">
+      Add New Poll
     </button>
   </a>
 </nav>

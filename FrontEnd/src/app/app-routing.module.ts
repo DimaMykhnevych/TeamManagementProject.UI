@@ -11,11 +11,19 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
+<<<<<<< HEAD
 import { CompanyRegistrationPageComponent } from './company-registration/components/company-registration-page/company-registration-page.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
+=======
+import { CreatePollComponent } from './create-poll/create-poll.component';
+import { ViewPollsComponent } from './view-polls/view-polls.component';
+
+const routes: Routes = [
+  { path: '', component: WelcomePageComponent },
+>>>>>>> master
   {
     path: '',
     component: AuthorizedMainComponent,
@@ -43,13 +51,31 @@ const routes: Routes = [
         component: ArticleEditComponent,
         canActivate: [AdminGuard],
       },
+<<<<<<< HEAD
+=======
+      {
+        path: 'createpoll',
+        component: CreatePollComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'viewPolls',
+        component: ViewPollsComponent,
+        canActivate: [AuthGuard],
+      },
+>>>>>>> master
     ],
   },
   { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
+<<<<<<< HEAD
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+=======
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule],
+>>>>>>> master
 })
 export class AppRoutingModule {}
