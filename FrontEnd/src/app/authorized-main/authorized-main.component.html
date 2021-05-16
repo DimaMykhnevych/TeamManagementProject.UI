@@ -1,0 +1,34 @@
+<!-- 
+    "div"s with "&nbsp;" value are used for creating margins using css grid
+-->
+
+<!-- "header" section -->
+<div class="placeholder-header">&nbsp;</div>
+<app-header style="grid-area: header"></app-header>
+<div class="placeholder-header">&nbsp;</div>
+
+<!-- margin between "header" and "menu&content" sections -->
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+
+<!-- "menu&content" section -->
+<div class="placeholder-menu">&nbsp;</div>
+<app-menu style="grid-area: menu"></app-menu>
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+<div style="grid-area: content">
+  <router-outlet></router-outlet>
+</div>
+<div class="placeholder-content">&nbsp;</div>
+
+<!-- margin after "menu&content" sections -->
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-menu">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>
+<div class="placeholder-content">&nbsp;</div>

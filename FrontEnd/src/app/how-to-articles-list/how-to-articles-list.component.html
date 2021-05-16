@@ -1,0 +1,58 @@
+<div class="header">
+    <h2>How-to articles</h2>
+    <button (click)="openAddDialog()">
+        Add New Article
+    </button>
+</div>
+
+<mat-accordion [togglePosition]="'before'" class="header-headers-align">
+  <mat-expansion-panel hideToggle disabled>
+    <mat-expansion-panel-header class="panelHeader">
+      <mat-panel-title>
+        Articles
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  
+  <mat-expansion-panel *ngIf="!howToArticles || howToArticles.length === 0" 
+    hideToggle disabled>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        No how-to articles were found :(
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel *ngFor="let article of howToArticles; index as i"
+    (opened)="open(i)" (closed)="close(i)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div>
+          <p class="bolder">{{article.name}}</p>
+          <span *ngIf="isOpened[i]" class="smaller">
+            {{article.dateOfPublishing | date: "shortDate"}}
+            {{article.publisherFullName}}
+          </span>
+        </div>
+        <span *ngIf="!isOpened[i]" class="smaller">
+          {{article.dateOfPublishing | date: "shortDate"}}
+        </span>
+        <div *ngIf="isOpened[i] && article.isMadeByUser" class="actionContainer">
+          <button id="edit" (click)="openEditDialog(article); $event.stopPropagation();"></button>
+          <button id="delete" (click)="delete(article); $event.stopPropagation();" 
+            [disabled]="deleting"></button>
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="panelContent">
+      <div class="half">
+        <p class="bolder">Problem</p>
+        <p>{{article.problem}}</p>
+      </div>
+      <div class="half">
+        <p class="bolder">Solution</p>
+        <p>{{article.solution}}</p>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

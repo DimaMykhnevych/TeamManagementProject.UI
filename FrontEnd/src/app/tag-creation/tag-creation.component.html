@@ -1,0 +1,17 @@
+<h4>
+  Create a tag
+</h4>
+
+<hr>
+
+<form id="article_form" (ngSubmit)="onSave()" [formGroup]="form"  ngNativeValidate>
+  <label for="article_name">Tag Name</label>
+  <input type="text" formControlName="label" id="article_name" autocomplete="off" required>
+</form>
+
+<div class="dialogActions">
+  <button type="submit" form="article_form">
+      {{ this.processing ? "Saving..." : "Save" }}
+  </button>
+  <button mat-dialog-close>Cancel</button>
+</div>

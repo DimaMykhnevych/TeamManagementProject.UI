@@ -1,0 +1,44 @@
+.mat-cell {
+    padding: 20px;
+    font-family: Helvetica-Neue;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.mat-header-cell {
+    padding: 20px;
+    font-family: Helvetica-Neue;
+    font-weight: bolder;
+    font-size: 20px;
+}
+:host {
+    width: 100%;
+    background-color: #e6e7e8;
+}
+table {
+    margin-top: 6.3%;
+    background-color: white;
+    width: 70%;
+}
+.md-button {
+    padding: 6px;
+    border-radius: 3px;
+    font-size: 0.9vw;
+    width: 6vw;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: #3b3a3c;
+}
+.md-button:hover {
+    background-color: #f47038;
+}
+.paginator--centered {
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+}
+.table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

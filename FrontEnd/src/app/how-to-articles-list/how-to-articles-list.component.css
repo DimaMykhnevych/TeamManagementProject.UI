@@ -1,0 +1,107 @@
+:host {
+    display: block;
+    height: 100%;
+    background-color: var(--light-grey);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header>h2 {
+    font-size: 24px;
+    font-family: Helvetica-Neue-Light;
+}
+
+.header>button {
+    padding: 0.6em 2em;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--dark-grey);
+    outline: none;
+}
+
+.header>button:hover {
+    background-color: var(--orange);
+}
+
+.panelHeader {
+    color: white;
+    background-color: var(--orange);
+    font-weight: 500;
+}
+
+mat-panel-title {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-headers-align .mat-expansion-panel-header-title,
+.header-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.header-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+p.bolder {
+    font-weight: 500;
+}
+
+.actionContainer {
+    display: flex;
+    column-gap: 12px;
+}
+
+.actionContainer>button#delete
+{
+    background-image: url(../../assets/images/delete.svg);
+}
+
+.actionContainer>button#edit
+{
+    background-image: url(../../assets/images/edit.svg);
+}
+
+.actionContainer>button
+{
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    outline: none;
+}
+
+.actionContainer>button:hover:not(:disabled):not([disabled]) {
+    background-color: aliceblue;
+    box-shadow: 0.4px 0.4px 2px 0px #67c0c5;
+}
+
+span.smaller {
+    font-size: smaller;
+    color: var(--medium-grey);
+}
+
+.panelContent {
+    display: flex;
+    margin-left: 24px;
+    margin-right: 16px;
+    justify-content: space-between;
+}
+
+.panelContent>div.half {
+    width: 48%;
+}
+
+.panelContent>div.half>p.bolder {
+    margin: 0.8em 0;
+}

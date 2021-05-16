@@ -1,0 +1,20 @@
+:root {
+  --dark-grey: #414042;
+  --medium-grey: #bdbec0;
+  --light-grey: #e6e7e8;
+  --orange: #f47038;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica-Neue, Roboto, sans-serif;
+}
+.snackBar button {
+  background-color: white;
+  color: var(--orange);
+}

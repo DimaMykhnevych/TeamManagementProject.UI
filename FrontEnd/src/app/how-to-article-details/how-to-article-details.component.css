@@ -1,0 +1,50 @@
+h4 {
+    font-weight: 500;
+    margin: 0 0 15px 0;;
+}
+
+hr {
+    background-color: var(--medium-grey);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: var(--dark-grey);
+    font-size: 13px;
+}
+
+input, textarea {
+    width: 100%;
+    border: solid 1px var(--medium-grey);
+    background-color: var(--light-grey);
+}
+
+textarea {
+    resize: none;
+}
+
+div.dialogActions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 0.6em 3em;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--dark-grey);
+    outline: none;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: var(--orange);
+}
+
+button:disabled, button[disabled] {
+    background-color: var(--medium-grey);
+}

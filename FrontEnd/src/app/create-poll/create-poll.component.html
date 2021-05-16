@@ -1,0 +1,29 @@
+
+<div class="pollCreationFormBlock">
+  <h4>
+    Create poll
+  </h4>
+  <hr/>
+  <form #myForm="ngForm" [formGroup]="pollForm" *ngIf="pollForm" ngNativeValidate>
+    <label>Title</label>
+    <input formControlName="name" type="text" required name="title">
+    <div class="Options">
+      <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+      <label class="abc">Options:</label>
+      <button type="button" (click)="addOption()" mat-raised-button class="md-button tagButton" color="primary">Add Option</button>
+      </div>
+      <ng-container *ngIf="options">
+      <div *ngFor="let option of options; let i = index;trackBy:trackByIndex;">
+        <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+          {{i+1}}. <input required class="cssd" [(ngModel)]="options[i].name" [ngModelOptions]="{standalone: true}">
+          <mat-icon (click)="deleteOption(i)" style="margin-left: 5px;">delete</mat-icon>
+        </div>
+      </div>
+    </ng-container>
+    </div>
+    <label class="all">Allow users to choose multiple options</label>
+    <input class="allow" name="check" formControlName="doesAllowMultiple" type="checkbox">
+    <button mat-raised-button class="md-button" (click)="save(myForm)" color="primary">{{ this.saving ? "Saving..." : "Save" }}</button>
+  </form>
+</div>
+

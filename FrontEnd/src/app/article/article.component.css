@@ -1,0 +1,76 @@
+:host {
+    display: block;
+    height: 100%;
+    background-color: var(--light-grey);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actionContainer {
+    display: flex;
+    margin: auto 0;
+    column-gap: 12px;
+}
+
+.actionContainer>button#delete
+{
+    background-image: url(../../assets/images/delete.svg);
+}
+
+.actionContainer>button#edit
+{
+    background-image: url(../../assets/images/edit.svg);
+}
+
+.actionContainer>button
+{
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.actionContainer>button:hover:not(:disabled):not([disabled]) {
+    background-color: aliceblue;
+    box-shadow: 0.4px 0.4px 2px 0px #67c0c5;
+}
+
+.smaller {
+    font-size: 12px;
+    color: var(--dark-grey);
+}
+
+article {
+    max-width: fit-content;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.36;
+
+    /*
+        The following properties are here to handle long words,
+        which are longer then the screen.
+    */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    /* Add a hyphen where the word breaks, if supported */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}

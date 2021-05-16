@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    min-width: 100%;
+    max-width: fit-content;
+    height: 100%;
+    background-color: var(--light-grey);
+}
+
+hr {
+    background-color: var(--medium-grey);
+}
