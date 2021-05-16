@@ -12,6 +12,8 @@ import { AdminGuard } from './guards/admin.guard';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
 import { CompanyRegistrationPageComponent } from './company-registration/components/company-registration-page/company-registration-page.component';
+import { CreatePollComponent } from './create-poll/create-poll.component';
+import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
 
 const routes: Routes = [
@@ -44,6 +46,16 @@ const routes: Routes = [
         path: 'article/:id/edit',
         component: ArticleEditComponent,
         canActivate: [AdminGuard],
+      },
+      {
+        path: 'createpoll',
+        component: CreatePollComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'viewPolls',
+        component: ViewPollsComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },

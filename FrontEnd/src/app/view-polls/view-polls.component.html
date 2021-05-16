@@ -1,0 +1,20 @@
+
+<div class="pollViewFormBlock">
+  <h4>
+    Polls
+  </h4>
+  <hr/>
+    <div *ngFor="let poll of polls">
+    <span class="block">{{poll.name}}</span>&nbsp;&nbsp;&nbsp;<span>{{poll.createdByName}}</span>
+    <div class="options" *ngFor="let option of poll.options;let i = index; trackBy: trackByy">
+      <div *ngIf="poll.doesAllowMultiple" style="display: flex;flex-direction: row;">
+        <mat-checkbox [checked]="option.checked" style="cursor: pointer;" [name]="option.name + i" color="primary" (click)="makeVote(poll.id, option.id)"></mat-checkbox>&nbsp;<div style="margin-top:-2px">{{option.name}}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="margin-top:-2px">{{option.value}}%</div>
+      </div>
+      <div *ngIf="!poll.doesAllowMultiple" style="display: flex;flex-direction: row;">
+        <mat-radio-button [checked]="option.checked" style="cursor: pointer;" color="primary" [name]="option.name + i" (click)="makeVote(poll.id, option.id)"></mat-radio-button><div style="margin-top:-1px">{{option.name}}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="margin-top:-1px">{{option.value}}%</div>
+      </div>
+    </div>
+    <hr/>
+  </div>
+</div>
+

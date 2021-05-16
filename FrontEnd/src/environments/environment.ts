@@ -28,6 +28,11 @@ export const environment = {
       get: `${API_BASE_URL}/tags`,
       post: `${API_BASE_URL}/tags`,
     },
+    polls: {
+      post: `${API_BASE_URL}/polls`,
+      get: `${API_BASE_URL}/polls`,
+      makeVote: `${API_BASE_URL}/polls/make-vote`,
+    },
     companies: {
       post: `${API_BASE_URL}/companies`,
     },

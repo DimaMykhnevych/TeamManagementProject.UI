@@ -35,6 +35,11 @@ import { TagCreationComponent } from './tag-creation/tag-creation.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
+import { CreatePollComponent } from './create-poll/create-poll.component';
+import { PollsService } from './services/polls.services';
+import {MatIconModule} from '@angular/material/icon';
+import { ViewPollsComponent } from './view-polls/view-polls.component';
+import {MatRadioModule} from '@angular/material/radio'
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
 
 @NgModule({
@@ -57,9 +62,11 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     ForgotPasswordComponent,
     WelcomePageComponent,
     AuthorizedMainComponent,
+    CreatePollComponent,
+    ViewPollsComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
@@ -77,8 +84,10 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     CKEditorModule,
     MatCheckboxModule,
     CompanyRegistrationModule,
+    MatIconModule,
+    MatRadioModule
   ],
-  providers: [ArticlesService, TagsService],
-  bootstrap: [AppComponent],
+  providers: [ArticlesService, TagsService, PollsService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
