@@ -26,7 +26,9 @@
         <button class="btn nav-btn1">Sign In</button>
       </div>
       <div class="btn1">
-        <button class="btn nav-btn2">Back to home</button>
+        <button class="btn nav-btn2" (click)="onBackToHomeClick()">
+          Back to home
+        </button>
       </div>
     </div>
   </div>
@@ -34,16 +36,14 @@
     <h2 class="text-center main-heading p-3">Register your company now!</h2>
     <div class="row d-flex justify-content-center">
       <div class="col-lg-6 form-wrapper d-flex justify-content-center py-3">
-        <form [formGroup]="form">
+        <form [formGroup]="form" (submit)="onSubmit()">
           <div>
             <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
             <mat-form-field appearance="fill" [style.width.px]="327">
               <mat-label>Company Name</mat-label>
-              <input formControlName="companyName" matInput required />
-              <mat-error *ngIf="companyName?.touched && companyName?.invalid">
-                <div *ngIf="companyName?.errors?.required">
-                  This field is required
-                </div>
+              <input formControlName="name" matInput required />
+              <mat-error *ngIf="name?.touched && name?.invalid">
+                <div *ngIf="name?.errors?.required">This field is required</div>
               </mat-error>
             </mat-form-field>
           </div>
@@ -87,13 +87,30 @@
             <i style="font-size: 30px" class="fas fa-envelope-open p-3"></i>
             <mat-form-field appearance="fill" [style.width.px]="327">
               <mat-label>Contact email</mat-label>
-              <input type="email" formControlName="email" matInput required />
-              <mat-error *ngIf="email?.touched && email?.invalid">
-                <div *ngIf="email?.errors?.required">
+              <input
+                type="email"
+                formControlName="ceoEmail"
+                matInput
+                required
+              />
+              <mat-error *ngIf="ceoEmail?.touched && ceoEmail?.invalid">
+                <div *ngIf="ceoEmail?.errors?.required">
                   This field is required
                 </div>
                 <div *ngIf="email?.errors?.pattern">
                   Email is typed incorrect!
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
+            <mat-form-field appearance="fill" [style.width.px]="327">
+              <mat-label>CEO username</mat-label>
+              <input formControlName="ceoUserName" matInput required />
+              <mat-error *ngIf="ceoUserName?.touched && ceoUserName?.invalid">
+                <div *ngIf="ceoUserName?.errors?.required">
+                  This field is required
                 </div>
               </mat-error>
             </mat-form-field>
@@ -104,15 +121,15 @@
               <mat-label>Password</mat-label>
               <input
                 type="password"
-                formControlName="password"
+                formControlName="ceoPassword"
                 matInput
                 required
               />
-              <mat-error *ngIf="password?.touched && password?.invalid">
-                <div *ngIf="password?.errors?.required">
+              <mat-error *ngIf="ceoPassword?.touched && ceoPassword?.invalid">
+                <div *ngIf="ceoPassword?.errors?.required">
                   This field is required
                 </div>
-                <div *ngIf="password?.errors?.pattern">
+                <div *ngIf="ceoPassword?.errors?.pattern">
                   Password must contain minimum seven characters, at least one
                   uppercase letter, one lowercase letter, one number and one
                   special character

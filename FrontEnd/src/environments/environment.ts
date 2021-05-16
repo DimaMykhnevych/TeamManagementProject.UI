@@ -28,6 +28,9 @@ export const environment = {
       get: `${API_BASE_URL}/tags`,
       post: `${API_BASE_URL}/tags`,
     },
+    companies: {
+      post: `${API_BASE_URL}/companies`,
+    },
   },
   ckeditorConfig: {
     toolbar: {
