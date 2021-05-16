@@ -12,10 +12,12 @@ import { AdminGuard } from './guards/admin.guard';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
 import { CompanyRegistrationPageComponent } from './company-registration/components/company-registration-page/company-registration-page.component';
+import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
+  { path: 'subscription-payment', component: SubscriptionPaymentComponent },
   {
     path: '',
     component: AuthorizedMainComponent,

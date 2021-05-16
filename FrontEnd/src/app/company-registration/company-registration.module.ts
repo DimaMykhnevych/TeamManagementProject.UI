@@ -4,9 +4,10 @@ import { CompanyRegistrationPageComponent } from './components/company-registrat
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from '../layout';
 import { CompanyService } from './services/company.service';
+import { SubscriptionPaymentComponent } from './components/subscription-payment/subscription-payment.component';
 
 @NgModule({
-  declarations: [CompanyRegistrationPageComponent],
+  declarations: [CompanyRegistrationPageComponent, SubscriptionPaymentComponent],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, MaterialModule],
   providers: [CompanyService],
 })

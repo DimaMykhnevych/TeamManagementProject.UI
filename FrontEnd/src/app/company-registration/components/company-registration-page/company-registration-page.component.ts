@@ -74,6 +74,8 @@ export class CompanyRegistrationPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this._companyServise.addCompany(this.form.value).subscribe((resp) => {});
+    this._companyServise.addCompany(this.form.value).subscribe((resp) => {
+      this._router.navigate(['subscription-payment', resp.id]);
+    });
   }
 }
