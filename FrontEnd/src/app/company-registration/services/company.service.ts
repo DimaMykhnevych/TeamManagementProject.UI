@@ -16,4 +16,10 @@ export class CompanyService {
       company
     );
   }
+
+  public getCompany(id: string): Observable<Company> {
+    return this._http.get<Company>(
+      `${environment.apiRoutes.companies.get}/${id}`
+    );
+  }
 }

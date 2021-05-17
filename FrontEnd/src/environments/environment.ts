@@ -35,7 +35,20 @@ export const environment = {
     },
     companies: {
       post: `${API_BASE_URL}/companies`,
+      get: `${API_BASE_URL}/companies`,
     },
+    subscriptionPlans: {
+      get: `${API_BASE_URL}/subscription-plans`,
+    },
+    subscription: {
+      put: `${API_BASE_URL}/subscriptions`,
+    },
+  },
+  stripeKeys: {
+    publishableKey:
+      'pk_test_51Irp6yF27ICkRRw9XrC5XUCd43fCvV4YGyhyg1nEnYjY3dr8Iegpjo0o0dviTYptZ4Unoaaek4X3vCnNFTmtZtGa00GmwLCiKT',
+    secretKey:
+      'sk_test_51Irp6yF27ICkRRw9OmlU3TEgVWfSqzFTL9qBCK5nJQdrv3eqVOX7rXVbOWKhOhrt9M6Smn6pbr0Ti7tiZcsVjVCC000IqHEVOV',
   },
   ckeditorConfig: {
     toolbar: {

@@ -36,9 +36,57 @@
     <h2 class="text-center main-heading p-3">Payment for subscription</h2>
     <div class="row d-flex justify-content-around">
       <div class="col-lg-6 form-wrapper d-flex justify-content-center py-3">
-        <form [formGroup]="form" (submit)="onSubmit()"></form>
+        <form [formGroup]="form">
+          <div>
+            <i style="font-size: 30px" class="fas fa-file-invoice p-3"></i>
+            <mat-form-field appearance="fill">
+              <mat-label>Subscription Plans</mat-label>
+              <mat-select formControlName="subsctiptionPlan">
+                <mat-option
+                  *ngFor="let plan of subscriptionPlans"
+                  [value]="plan.id"
+                >
+                  {{ plan.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <i style="font-size: 30px" class="fas fa-money-bill-wave p-2"></i>
+            <mat-form-field appearance="fill">
+              <mat-label>Price</mat-label>
+              <input [readonly]="true" matInput [value]="selectedPlan?.price" />
+            </mat-form-field>
+          </div>
+          <div>
+            <i style="font-size: 30px" class="fas fa-calendar p-3"></i>
+            <mat-form-field appearance="fill">
+              <mat-label>Expiration date</mat-label>
+              <input
+                type="datetime"
+                [readonly]="true"
+                matInput
+                [value]="expirationDate | date"
+              />
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button (click)="onPayButtonClick()" mat-raised-button>Pay</button>
+          </div>
+        </form>
       </div>
-      <div class="plan-info col-lg-5"></div>
+      <div class="plan-info col-lg-5">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> {{ selectedPlan?.name }} Plan </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Projects quantity: {{ selectedPlan?.projectsQuantity }}</p>
+            <p>Teams quantity: {{ selectedPlan?.teamsQuantity }}</p>
+            <p>{{ selectedPlan?.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
   <div class="footer" style="width: 100%">
