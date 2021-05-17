@@ -4,6 +4,9 @@
   --light-grey: #e6e7e8;
   --orange: #f47038;
 }
+* {
+  /* border: 1px solid red; */
+}
 
 html,
 body {

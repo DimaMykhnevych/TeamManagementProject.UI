@@ -51,6 +51,9 @@
 
 .footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 @media all and (max-width: 937px) {
@@ -124,4 +127,8 @@ a {
 .form-wrapper {
   background-color: rgba(233, 240, 241, 0.795);
   border-radius: 10px;
+}
+
+.plan-info {
+  padding: 10px;
 }
