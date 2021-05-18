@@ -42,6 +42,7 @@ import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
 import { ToastrModule } from 'ngx-toastr';
+import { NativeLoginModule } from './native-login/native-login.module';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatIconModule,
     MatRadioModule,
     ToastrModule.forRoot(),
+    NativeLoginModule,
   ],
   providers: [ArticlesService, TagsService, PollsService],
   bootstrap: [AppComponent],
