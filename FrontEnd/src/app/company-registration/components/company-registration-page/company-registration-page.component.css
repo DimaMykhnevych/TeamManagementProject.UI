@@ -125,3 +125,9 @@ a {
   background-color: rgba(233, 240, 241, 0.795);
   border-radius: 10px;
 }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

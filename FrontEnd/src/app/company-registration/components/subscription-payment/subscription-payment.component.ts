@@ -16,6 +16,7 @@ import { CompanyService } from '../../services/company.service';
 import { SubscriptionPlanService } from '../../services/subscription-plan.service';
 import { SubscriptionService } from '../../services/subscription.service';
 import { StripePaymentRequest } from '../../../models/StripePaymentRequest';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-subscription-payment',
@@ -39,7 +40,8 @@ export class SubscriptionPaymentComponent implements OnInit, OnDestroy {
     private _subscriptionPlanService: SubscriptionPlanService,
     private _activateRoute: ActivatedRoute,
     private _companyService: CompanyService,
-    private _subscriptionService: SubscriptionService
+    private _subscriptionService: SubscriptionService,
+    private _toastr: ToastrService
   ) {
     this.form = this._builder.group({});
   }
@@ -134,6 +136,7 @@ export class SubscriptionPaymentComponent implements OnInit, OnDestroy {
     this._subscriptionService.updateSubscription(body).subscribe((resp) => {
       this.paymentResponse = resp;
     });
+    this._toastr.success('Payment was created successfully');
     this._router.navigate(['']);
   }
 

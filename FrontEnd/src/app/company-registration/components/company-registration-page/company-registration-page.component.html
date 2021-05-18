@@ -143,7 +143,13 @@
               class="btn btn-block btn-success"
               [disabled]="this.form.invalid"
             >
-              Pay for subscription
+              <div
+                class="d-flex justify-content-center"
+                *ngIf="isCompanyAdding"
+              >
+                <mat-spinner [diameter]="30"></mat-spinner>
+              </div>
+              <div *ngIf="!isCompanyAdding">Pay for subscription</div>
             </button>
           </div>
         </form>

@@ -1,3 +1,4 @@
+@import "~ngx-toastr/toastr";
 :root {
   --dark-grey: #414042;
   --medium-grey: #bdbec0;

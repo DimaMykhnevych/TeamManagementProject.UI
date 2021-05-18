@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CompanyService } from '../../services/company.service';
 
 @Component({
@@ -15,11 +16,13 @@ import { CompanyService } from '../../services/company.service';
 })
 export class CompanyRegistrationPageComponent implements OnInit {
   public form: FormGroup;
+  public isCompanyAdding: boolean;
 
   constructor(
     private _builder: FormBuilder,
     private _router: Router,
-    private _companyServise: CompanyService
+    private _companyServise: CompanyService,
+    private _toastr: ToastrService
   ) {
     this.form = this._builder.group({});
   }
@@ -74,7 +77,10 @@ export class CompanyRegistrationPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    this.isCompanyAdding = true;
     this._companyServise.addCompany(this.form.value).subscribe((resp) => {
+      this.isCompanyAdding = false;
+      this._toastr.success('Company registration was completed successfully');
       this._router.navigate(['/subscription-payment'], {
         queryParams: {
           companyId: resp.id,

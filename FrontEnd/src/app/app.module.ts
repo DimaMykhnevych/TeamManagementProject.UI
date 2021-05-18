@@ -37,10 +37,11 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { PollsService } from './services/polls.services';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
-import {MatRadioModule} from '@angular/material/radio'
+import { MatRadioModule } from '@angular/material/radio';
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     ViewPollsComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
@@ -85,9 +86,10 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     MatCheckboxModule,
     CompanyRegistrationModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ArticlesService, TagsService, PollsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
