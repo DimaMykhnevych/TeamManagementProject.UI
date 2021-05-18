@@ -15,11 +15,20 @@ import { CompanyRegistrationPageComponent } from './company-registration/compone
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
+import { LoginComponent } from './native-login/components/login/login.component';
+import { RegisterEmployeeComponent } from './company-features/components/register-employee/register-employee.component';
+import { NativeAuthGuard } from './auth/guards';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
   { path: 'subscription-payment', component: SubscriptionPaymentComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'register-employee',
+    component: RegisterEmployeeComponent,
+    canActivate: [NativeAuthGuard],
+  },
   {
     path: '',
     component: AuthorizedMainComponent,

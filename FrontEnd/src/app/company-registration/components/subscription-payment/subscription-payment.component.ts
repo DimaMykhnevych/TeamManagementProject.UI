@@ -178,4 +178,8 @@ export class SubscriptionPaymentComponent implements OnInit, OnDestroy {
     };
     return s;
   }
+
+  public onSignInBtnClick(): void {
+    this._router.navigate(['login']);
+  }
 }

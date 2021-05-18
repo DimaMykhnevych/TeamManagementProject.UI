@@ -88,4 +88,8 @@ export class CompanyRegistrationPageComponent implements OnInit {
       });
     });
   }
+
+  public onSignInBtnClick(): void {
+    this._router.navigate(['login']);
+  }
 }

@@ -10,6 +10,10 @@ export const environment = {
       getUsers: `${API_BASE_URL}/identity/users`,
       makeAdmin: `${API_BASE_URL}/identity/make-admin`,
     },
+    auth: {
+      userInfo: `${API_BASE_URL}/auth/user-info`,
+      login: `${API_BASE_URL}/auth/login`,
+    },
     articles: {
       getById: `${API_BASE_URL}/articles`,
       groupedGet: `${API_BASE_URL}/articles?grouped=true`,

@@ -43,6 +43,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
 import { ToastrModule } from 'ngx-toastr';
 import { NativeLoginModule } from './native-login/native-login.module';
+import { AuthModule } from './auth/auth.module';
+import { CompanyFeaturesModule } from './company-features/company-features.module';
 
 @NgModule({
   declarations: [
@@ -90,6 +92,8 @@ import { NativeLoginModule } from './native-login/native-login.module';
     MatRadioModule,
     ToastrModule.forRoot(),
     NativeLoginModule,
+    AuthModule.forRoot(),
+    CompanyFeaturesModule,
   ],
   providers: [ArticlesService, TagsService, PollsService],
   bootstrap: [AppComponent],
