@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit(): void {
     if (this._auth.isAuthenticated()) {
-      this._router.navigate(['/register-employee']);
+      this._router.navigate(['/company-features/register-employee']);
     }
   }
 
   public login(value: AuthForm): void {
     this._auth.authorize(value).subscribe((authResponse: AuthResponse) => {
       if (authResponse.isAuthorized) {
-        this._router.navigate(['/register-employee']);
+        this._router.navigate(['/company-features/register-employee']);
       } else {
         this.authResponse = authResponse;
       }

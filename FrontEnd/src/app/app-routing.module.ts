@@ -18,6 +18,10 @@ import { SubscriptionPaymentComponent } from './company-registration/components/
 import { LoginComponent } from './native-login/components/login/login.component';
 import { RegisterEmployeeComponent } from './company-features/components/register-employee/register-employee.component';
 import { NativeAuthGuard } from './auth/guards';
+import { NavbarComponent } from './company-features/templates/navbar/navbar.component';
+import { ProjectCreationComponent } from './company-features/components/project-creation/project-creation.component';
+import { CreateTeamComponent } from './company-features/components/create-team/create-team.component';
+import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
@@ -25,10 +29,38 @@ const routes: Routes = [
   { path: 'subscription-payment', component: SubscriptionPaymentComponent },
   { path: 'login', component: LoginComponent },
   {
-    path: 'register-employee',
-    component: RegisterEmployeeComponent,
+    path: 'company-features',
+    component: NavbarComponent,
     canActivate: [NativeAuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'register-employee',
+        pathMatch: 'full',
+      },
+      {
+        path: 'register-employee',
+        component: RegisterEmployeeComponent,
+        canActivate: [NativeAuthGuard],
+      },
+      {
+        path: 'create-project',
+        component: ProjectCreationComponent,
+        canActivate: [NativeAuthGuard],
+      },
+      {
+        path: 'create-team',
+        component: CreateTeamComponent,
+        canActivate: [NativeAuthGuard],
+      },
+      {
+        path: 'distribute-projects',
+        component: DistributeProjectsComponent,
+        canActivate: [NativeAuthGuard],
+      },
+    ],
   },
+
   {
     path: '',
     component: AuthorizedMainComponent,
