@@ -15,6 +15,8 @@ import { CompanyRegistrationPageComponent } from './company-registration/compone
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
+import { ViewEventsComponent } from './view-events/view-events.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
@@ -56,6 +58,16 @@ const routes: Routes = [
         path: 'viewPolls',
         component: ViewPollsComponent,
         canActivate: [AuthGuard],
+      },
+      {
+        path: 'viewEvents',
+        component: ViewEventsComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'createEvents',
+        component: CreateEventComponent,
+        canActivate: [AdminGuard],
       },
     ],
   },

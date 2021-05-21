@@ -41,6 +41,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
 import {MatRadioModule} from '@angular/material/radio'
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
+import { ViewEventsComponent } from './view-events/view-events.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EventsService } from './services/events.service';
+import { NgxMatDatetimePickerModule,  NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
 @NgModule({
   declarations: [
@@ -64,9 +71,11 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     AuthorizedMainComponent,
     CreatePollComponent,
     ViewPollsComponent,
+    ViewEventsComponent,
+    CreateEventComponent,
   ],
   imports: [
-  BrowserModule,
+BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
@@ -85,9 +94,14 @@ import { CompanyRegistrationModule } from './company-registration/company-regist
     MatCheckboxModule,
     CompanyRegistrationModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    NgxMatNativeDateModule
   ],
-  providers: [ArticlesService, TagsService, PollsService],
+  providers: [ArticlesService, TagsService, PollsService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

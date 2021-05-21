@@ -1,0 +1,23 @@
+
+<div class="pollViewFormBlock">
+  <h4>
+    Events
+  </h4>
+  <hr/>
+    <div class="block" *ngFor="let event of events">
+    <span style="font-weight: bold;">Event -</span><span> {{event.title}}</span>&nbsp;&nbsp;<span style="font-weight: bold;">Created By -</span><span> {{event.createdByName}}</span>
+    <div style="font-weight: bold;">Attendies:</div>
+    <span *ngFor="let attendie of event.attendies">
+      {{attendie.email}} - {{attendie.status}};&nbsp;
+    </span>
+    <div style="font-weight: bold;">Time: {{formatDate(event.dateTime)}}</div>
+    <div style="font-weight: bold;">Description: </div>
+    <div>{{event.description}}</div>
+    <div style="font-weight: bold;">Join Meeting: <span><a [attr.href]="event.url">{{event.url}}</a></span></div>
+    <div style="font-weight: bold;">Passcode: {{event.passcode}}</div>
+    <div>Are you attending:</div>
+    <span><button (click)="changeStatus(event.id, 'Yes')" class="yes">Yes</button></span><span><button (click)="changeStatus(event.id, 'No')" class="no">No</button></span><span><button (click)="changeStatus(event.id, 'Maybe')" class="maybe">Maybe</button></span>
+    <hr/>
+  </div>
+</div>
+
