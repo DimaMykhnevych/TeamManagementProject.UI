@@ -41,11 +41,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
-import { ToastrModule } from 'ngx-toastr';
-import { NativeLoginModule } from './native-login/native-login.module';
+import { ViewEventsComponent } from './view-events/view-events.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EventsService } from './services/events.service';
+import { NgxMatDatetimePickerModule,  NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";import { NativeLoginModule } from './native-login/native-login.module';
 import { AuthModule } from './auth/auth.module';
 import { CompanyFeaturesModule } from './company-features/company-features.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,10 +72,11 @@ import { CompanyFeaturesModule } from './company-features/company-features.modul
     AuthorizedMainComponent,
     CreatePollComponent,
     ViewPollsComponent,
+    ViewEventsComponent,
+    CreateEventComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule,    AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
     HttpClientModule,
@@ -89,13 +94,16 @@ import { CompanyFeaturesModule } from './company-features/company-features.modul
     MatCheckboxModule,
     CompanyRegistrationModule,
     MatIconModule,
-    MatRadioModule,
     ToastrModule.forRoot(),
     NativeLoginModule,
     AuthModule.forRoot(),
     CompanyFeaturesModule,
-  ],
-  providers: [ArticlesService, TagsService, PollsService],
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    NgxMatNativeDateModule  ],
+  providers: [ArticlesService, TagsService, PollsService, EventsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

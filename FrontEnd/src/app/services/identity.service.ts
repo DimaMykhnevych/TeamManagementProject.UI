@@ -31,4 +31,8 @@ export class IdentityService {
   public makeAdmin(idParameter: string) {
     return this.http.put(environment.apiRoutes.identity.makeAdmin + `/${idParameter}`, {}, { withCredentials: true });
   }
+
+  getTeamMembers(){
+    return this.http.get(environment.apiRoutes.identity.getTeam, { withCredentials: true })
+  }
 }

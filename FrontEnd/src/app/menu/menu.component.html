@@ -113,6 +113,18 @@
       </mat-expansion-panel-header>
     </mat-expansion-panel>
   </a>
+  <a routerLink="/viewEvents">
+    <mat-expansion-panel hideToggle="true" class="expansionPanel" disabled>
+      <mat-expansion-panel-header
+        [expandedHeight]="'70px'"
+        [collapsedHeight]="'70px'"
+      >
+        <mat-panel-title class="matPanelDesc matTitle matUsers">
+          <p>Events</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </a>
   <a routerLink="/createarticle" *ngIf="isAdmin">
     <button mat-raised-button class="md-button" color="primary">
       Add New Article
@@ -121,6 +133,11 @@
   <a routerLink="/createpoll" *ngIf="isAdmin">
     <button mat-raised-button class="md-button" color="primary">
       Add New Poll
+    </button>
+  </a>
+  <a routerLink="/createEvents" *ngIf="isAdmin">
+    <button mat-raised-button class="md-button" color="primary">
+      Add New Event
     </button>
   </a>
 </nav>
