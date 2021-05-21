@@ -57,3 +57,7 @@ h4 {
   padding:5px 30px;
   margin-left:2%;
 }
+.desc {
+  width:30%;
+  word-wrap: break-word;
+}
