@@ -9,7 +9,7 @@ export const environment = {
       getUser: `${API_BASE_URL}/identity/user`,
       getUsers: `${API_BASE_URL}/identity/users`,
       makeAdmin: `${API_BASE_URL}/identity/make-admin`,
-      getTeam : `${API_BASE_URL}/identity/getTeam`
+      getTeam: `${API_BASE_URL}/identity/getTeam`,
     },
     auth: {
       userInfo: `${API_BASE_URL}/auth/user-info`,
@@ -48,11 +48,14 @@ export const environment = {
     subscription: {
       put: `${API_BASE_URL}/subscriptions`,
     },
-    event : {
+    event: {
       post: `${API_BASE_URL}/events`,
       get: `${API_BASE_URL}/events`,
-      changeAttending: `${API_BASE_URL}/events/changeAttending`
-    }
+      changeAttending: `${API_BASE_URL}/events/changeAttending`,
+    },
+    employee: {
+      post: `${API_BASE_URL}/employee`,
+    },
   },
   stripeKeys: {
     publishableKey:

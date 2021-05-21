@@ -6,6 +6,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ProjectCreationComponent } from './components/project-creation/project-creation.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { DistributeProjectsComponent } from './components/distribute-projects/distribute-projects.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MaterialModule } from '../layout';
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,13 @@ import { DistributeProjectsComponent } from './components/distribute-projects/di
     CreateTeamComponent,
     DistributeProjectsComponent,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+  ],
+  providers: [EmployeeService],
 })
 export class CompanyFeaturesModule {}

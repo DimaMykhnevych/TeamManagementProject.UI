@@ -45,11 +45,17 @@ import { ViewEventsComponent } from './view-events/view-events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventsService } from './services/events.service';
-import { NgxMatDatetimePickerModule,  NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatMomentDateModule } from "@angular/material-moment-adapter";import { NativeLoginModule } from './native-login/native-login.module';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { NativeLoginModule } from './native-login/native-login.module';
 import { AuthModule } from './auth/auth.module';
 import { CompanyFeaturesModule } from './company-features/company-features.module';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +82,8 @@ import { CompanyFeaturesModule } from './company-features/company-features.modul
     CreateEventComponent,
   ],
   imports: [
-    BrowserModule,    AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
     HttpClientModule,
@@ -102,7 +109,8 @@ import { CompanyFeaturesModule } from './company-features/company-features.modul
     NgxMatTimepickerModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    NgxMatNativeDateModule  ],
+    NgxMatNativeDateModule,
+  ],
   providers: [ArticlesService, TagsService, PollsService, EventsService],
   bootstrap: [AppComponent],
 })
