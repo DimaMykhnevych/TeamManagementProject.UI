@@ -4,4 +4,6 @@ export class UserModel {
   public email: string;
   public isAdmin: boolean;
   public username: string;
+  public firstName: string;
+  public lastName: string;
 }

@@ -55,6 +55,7 @@ export const environment = {
     },
     employee: {
       post: `${API_BASE_URL}/employee`,
+      get: `${API_BASE_URL}/employee`,
     },
     project: {
       post: `${API_BASE_URL}/project`,

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserModel } from 'src/app/models/UserModel';
 import { environment } from 'src/environments/environment';
 import { RegisterEmployeeModel } from '../../models/RegisterEmployeeModel';
 
@@ -18,5 +19,11 @@ export class EmployeeService {
       employee,
       { withCredentials: true }
     );
+  }
+
+  public getEmployees(): Observable<UserModel[]> {
+    return this._http.get<UserModel[]>(environment.apiRoutes.employee.get, {
+      withCredentials: true,
+    });
   }
 }
