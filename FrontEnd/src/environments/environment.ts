@@ -48,6 +48,10 @@ export const environment = {
       post: `${API_BASE_URL}/events`,
       get: `${API_BASE_URL}/events`,
       changeAttending: `${API_BASE_URL}/events/changeAttending`
+    },
+    report : {
+      post: `${API_BASE_URL}/reports`,
+      get: `${API_BASE_URL}/reports`
     }
   },
   stripeKeys: {

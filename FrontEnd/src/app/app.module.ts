@@ -48,6 +48,8 @@ import { EventsService } from './services/events.service';
 import { NgxMatDatetimePickerModule,  NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { CreateReportComponent } from './create-report/create-report.component';
+import { ViewReportsComponent } from './view-reports/view-reports.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     ViewPollsComponent,
     ViewEventsComponent,
     CreateEventComponent,
+    CreateReportComponent,
+    ViewReportsComponent,
   ],
   imports: [
 BrowserModule,

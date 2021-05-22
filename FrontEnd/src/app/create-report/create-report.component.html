@@ -1,0 +1,55 @@
+<div class="pollCreationFormBlock">
+    <h4>
+      Create report
+    </h4>
+    <hr/>
+    <form #myForm="ngForm" [formGroup]="reportForm" *ngIf="reportForm" ngNativeValidate>
+      <div class="Options">
+        <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+        <span class="abc">Code Review</span>
+        <button type="button" (click)="add('codeReview')" mat-raised-button class="md-button tagButton" color="primary">+</button>
+        </div>
+        <ng-container *ngIf="codeReview">
+        <div *ngFor="let codeRev of codeReview; let i = index;trackBy:trackBycr;">
+          <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+            {{i+1}}. <input required class="cssd" [(ngModel)]="codeReview[i].value" [ngModelOptions]="{standalone: true}">
+            <mat-icon (click)="delete('codeReview', i)" style="margin-left: 5px;">delete</mat-icon>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+      <div class="Options">
+        <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+        <span class="abc">Active</span>
+        <button type="button" (click)="add('active')" mat-raised-button class="md-button tagButton" color="primary">+</button>
+        </div>
+        <ng-container *ngIf="active">
+        <div *ngFor="let codeRev of active; let i = index;trackBy:trackByactive;">
+          <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+            {{i+1}}. <input required class="cssd" [(ngModel)]="active[i].value" [ngModelOptions]="{standalone: true}">
+            <mat-icon (click)="delete('active', i)" style="margin-left: 5px;">delete</mat-icon>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+      <div class="Options">
+        <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+        <span class="abc">Resolved</span>
+        <button type="button" (click)="add('resolved')" mat-raised-button class="md-button tagButton" color="primary">+</button>
+        </div>
+        <ng-container *ngIf="resolved">
+        <div *ngFor="let codeRev of resolved; let i = index;trackBy:trackByresolved;">
+          <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
+            {{i+1}}. <input required class="cssd" [(ngModel)]="resolved[i].value" [ngModelOptions]="{standalone: true}">
+            <mat-icon (click)="delete('resolved', i)" style="margin-left: 5px;">delete</mat-icon>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+      <label class="all">Additional Comments</label>
+      <mat-form-field appearance="fill" style="width: 30%; align-self:flex-start; margin-left:2%">
+        <textarea formControlName="additionalComment" matInput rows="5" cols="40"></textarea>
+      </mat-form-field>
+      <button mat-raised-button class="md-button" (click)="save(myForm)" color="primary">{{ this.saving ? "Saving..." : "Save" }}</button>
+    </form>
+  </div>

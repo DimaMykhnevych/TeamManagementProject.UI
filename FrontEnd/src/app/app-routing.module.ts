@@ -17,6 +17,8 @@ import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
 import { ViewEventsComponent } from './view-events/view-events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { CreateReportComponent } from './create-report/create-report.component';
+import { ViewReportsComponent } from './view-reports/view-reports.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
@@ -69,6 +71,16 @@ const routes: Routes = [
         component: CreateEventComponent,
         canActivate: [AdminGuard],
       },
+      {
+        path: 'createReports',
+        component: CreateReportComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'viewReports',
+        component: ViewReportsComponent,
+        canActivate: [AdminGuard],
+      }
     ],
   },
   { path: '**', redirectTo: '' },
@@ -76,6 +88,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+exports: [RouterModule],
 })
 export class AppRoutingModule {}
