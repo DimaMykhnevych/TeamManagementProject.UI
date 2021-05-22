@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  FormGroupDirective,
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +17,7 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class RegisterEmployeeComponent implements OnInit {
   public form: FormGroup;
+  public isEmployeeAdding: boolean;
   constructor(
     private _builder: FormBuilder,
     private _toastr: ToastrService,
@@ -56,23 +58,21 @@ export class RegisterEmployeeComponent implements OnInit {
     return this.form.get('dateOfBirth');
   }
 
-  public onSubmit(): void {
+  public onSubmit(formDirective: FormGroupDirective): void {
+    this.isEmployeeAdding = true;
     this._employeeService
       .registerEmployee(this.form.value)
       .subscribe((resp: RegisterEmployeeModel) => {
         if (resp) {
+          this.isEmployeeAdding = false;
           this._toastr.success('Employee was added successfully');
-          this.clearFields();
+          this.clearFields(formDirective);
         }
       });
   }
 
-  private clearFields(): void {
-    this.firstName.setValue('');
-    this.lastName.setValue('');
-    this.email.setValue('');
-    this.password.setValue('');
-    this.position.setValue('');
-    this.dateOfBirth.setValue('');
+  private clearFields(formDirective: FormGroupDirective): void {
+    formDirective.resetForm();
+    this.form.reset();
   }
 }

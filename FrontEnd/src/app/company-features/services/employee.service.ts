@@ -15,7 +15,8 @@ export class EmployeeService {
   ): Observable<RegisterEmployeeModel> {
     return this._http.post<RegisterEmployeeModel>(
       environment.apiRoutes.employee.post,
-      employee
+      employee,
+      { withCredentials: true }
     );
   }
 }

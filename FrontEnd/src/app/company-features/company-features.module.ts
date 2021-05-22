@@ -9,6 +9,7 @@ import { DistributeProjectsComponent } from './components/distribute-projects/di
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from '../layout';
 import { EmployeeService } from './services/employee.service';
+import { ProjectService } from './services/project.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { EmployeeService } from './services/employee.service';
     FormsModule,
     MaterialModule,
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, ProjectService],
 })
 export class CompanyFeaturesModule {}

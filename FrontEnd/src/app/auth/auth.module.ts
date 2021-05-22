@@ -19,7 +19,7 @@ export class AuthModule {
         AuthService,
         TokenService,
         NativeAuthGuard,
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         UserInfoService,
         CurrentUserService,
       ],

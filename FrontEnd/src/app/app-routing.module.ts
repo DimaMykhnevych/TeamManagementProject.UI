@@ -23,7 +23,8 @@ import { NativeAuthGuard } from './auth/guards';
 import { NavbarComponent } from './company-features/templates/navbar/navbar.component';
 import { ProjectCreationComponent } from './company-features/components/project-creation/project-creation.component';
 import { CreateTeamComponent } from './company-features/components/create-team/create-team.component';
-import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';const routes: Routes = [
+import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';
+const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
   { path: 'subscription-payment', component: SubscriptionPaymentComponent },
@@ -31,7 +32,7 @@ import { DistributeProjectsComponent } from './company-features/components/distr
   {
     path: 'company-features',
     component: NavbarComponent,
-    canActivate: [NativeAuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -41,22 +42,22 @@ import { DistributeProjectsComponent } from './company-features/components/distr
       {
         path: 'register-employee',
         component: RegisterEmployeeComponent,
-        canActivate: [NativeAuthGuard],
+        canActivate: [AuthGuard],
       },
       {
         path: 'create-project',
         component: ProjectCreationComponent,
-        canActivate: [NativeAuthGuard],
+        canActivate: [AuthGuard],
       },
       {
         path: 'create-team',
         component: CreateTeamComponent,
-        canActivate: [NativeAuthGuard],
+        canActivate: [AuthGuard],
       },
       {
         path: 'distribute-projects',
         component: DistributeProjectsComponent,
-        canActivate: [NativeAuthGuard],
+        canActivate: [AuthGuard],
       },
     ],
   },
