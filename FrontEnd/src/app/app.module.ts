@@ -56,6 +56,8 @@ import { NativeLoginModule } from './native-login/native-login.module';
 import { AuthModule } from './auth/auth.module';
 import { CompanyFeaturesModule } from './company-features/company-features.module';
 import { ToastrModule } from 'ngx-toastr';
+import { CookieModule } from 'ngx-cookie';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,6 +112,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatDatepickerModule,
     MatMomentDateModule,
     NgxMatNativeDateModule,
+    CookieModule.forRoot(),
   ],
   providers: [ArticlesService, TagsService, PollsService, EventsService],
   bootstrap: [AppComponent],

@@ -21,6 +21,7 @@ export class SubscriptionService {
         headers: {
           'Content-Type': 'application/json',
         },
+        withCredentials: true,
       }
     );
   }

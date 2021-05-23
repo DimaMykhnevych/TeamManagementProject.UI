@@ -47,7 +47,8 @@ export class CompanyRegistrationPageComponent implements OnInit {
           '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$_!%*?&])[A-Za-z\\d@$_!%*?&]{7,}$'
         ),
       ]),
-      ceoUserName: new FormControl('', Validators.required),
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
     });
   }
   get name() {
@@ -68,8 +69,12 @@ export class CompanyRegistrationPageComponent implements OnInit {
   get ceoPassword() {
     return this.form.get('ceoPassword');
   }
-  get ceoUserName() {
-    return this.form.get('ceoUserName');
+  get firstName() {
+    return this.form.get('firstName');
+  }
+
+  get lastName() {
+    return this.form.get('lastName');
   }
 
   public onBackToHomeClick(): void {

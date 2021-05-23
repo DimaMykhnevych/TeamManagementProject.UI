@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie';
 
 @Injectable()
 export class TokenService {
-  constructor() {}
+  constructor(private cookieService: CookieService) {}
 
   public get token(): string {
     return localStorage.getItem('token') || (null as any);
-  }
-
-  public set token(value: string) {
-    localStorage.setItem('token', value);
   }
 
   public clearToken(): void {

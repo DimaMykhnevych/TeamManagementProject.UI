@@ -12,7 +12,8 @@ export class Company {
   subscriptionId: string;
   subscription: Subscription;
   ceoId: string;
-  ceoUserName: string;
+  firstName: string;
+  lastName: string;
   ceoEmail: string;
   ceoPassword: string;
   CEO: UserModel;

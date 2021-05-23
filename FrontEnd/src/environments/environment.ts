@@ -14,6 +14,7 @@ export const environment = {
     auth: {
       userInfo: `${API_BASE_URL}/auth/user-info`,
       login: `${API_BASE_URL}/auth/login`,
+      logout: `${API_BASE_URL}/auth/logout`,
     },
     articles: {
       getById: `${API_BASE_URL}/articles`,

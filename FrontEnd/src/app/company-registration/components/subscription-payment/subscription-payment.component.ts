@@ -137,7 +137,7 @@ export class SubscriptionPaymentComponent implements OnInit, OnDestroy {
       this.paymentResponse = resp;
     });
     this._toastr.success('Payment was created successfully');
-    this._router.navigate(['']);
+    this._router.navigate(['/company-features/register-employee']);
   }
 
   private openCheckout(tokenCallback) {

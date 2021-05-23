@@ -24,20 +24,21 @@ export class AuthInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const request = req.clone({
-      headers: req.headers.set(
-        'Authorization',
-        `Bearer ${this._tokenService.token}`
-      ),
-    });
+    // const request = req.clone({
+    //   headers: req.headers.set(
+    //     'Authorization',
+    //     `Bearer ${this._tokenService.token}`
+    //   ),
+    // });
 
-    return next.handle(request).pipe(
-      catchError((error) => {
-        this._handleError(error);
+    // return next.handle(request).pipe(
+    //   catchError((error) => {
+    //     this._handleError(error);
 
-        return of(error);
-      })
-    );
+    //     return of(error);
+    //   })
+    // );
+    return null;
   }
 
   private _handleError(err: HttpErrorResponse): void {

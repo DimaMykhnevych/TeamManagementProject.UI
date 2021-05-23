@@ -15,14 +15,12 @@ export class UserInfoService {
   ) {}
 
   public loadUserInfo(): Observable<IUserInfo> {
-    if (!this.authService.isAuthenticated()) {
-      return of(null as any);
-    }
-
     const loadSubject = new ReplaySubject<IUserInfo>(1);
 
     this.httpClient
-      .get(environment.apiRoutes.auth.userInfo)
+      .get(environment.apiRoutes.auth.userInfo, {
+        withCredentials: true,
+      })
       .subscribe((userInfo) => {
         this.currentUserService.userInfo = userInfo;
         loadSubject.next(userInfo);

@@ -30,6 +30,7 @@
     "@ckeditor/ckeditor5-undo": "^21.0.0",
     "ckeditor5": "^27.0.0",
     "moment": "^2.29.1",
+    "ngx-cookie": "^5.0.2",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

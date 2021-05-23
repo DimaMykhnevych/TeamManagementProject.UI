@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -15,9 +15,16 @@ import { AuthForm } from '../../../models/LoginFormModel';
 export class LoginFormComponent implements OnInit {
   @Output()
   public submit: EventEmitter<AuthForm> = new EventEmitter<AuthForm>();
+  @Input() public set isLoginUnSuccessfull(j: boolean) {
+    this._isLoginUnSuccessfull = j;
+  }
+  public get isLoginUnSuccessfull(): boolean {
+    return this._isLoginUnSuccessfull;
+  }
 
   public form: FormGroup;
   public submitted: boolean = false;
+  private _isLoginUnSuccessfull: boolean;
 
   constructor(private _builder: FormBuilder) {
     this.form = this._builder.group({

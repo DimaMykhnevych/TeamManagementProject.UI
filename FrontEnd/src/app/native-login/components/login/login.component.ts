@@ -1,6 +1,7 @@
+import { HttpResponseBase } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/services';
+import { AuthService, UserInfoService } from 'src/app/auth/services';
 import { AuthForm } from 'src/app/models/LoginFormModel';
 import { IdentityService } from 'src/app/services/identity.service';
 import { AuthResponse } from '../../../models/AuthResponse';
@@ -12,27 +13,27 @@ import { AuthResponse } from '../../../models/AuthResponse';
 })
 export class LoginComponent implements OnInit {
   public authResponse: AuthResponse;
+  public isLoginUnSuccessfull: boolean;
   constructor(
     private _auth: AuthService,
     private _router: Router,
-    private _identityService: IdentityService
+    private _userInfoService: UserInfoService
   ) {}
 
   public ngOnInit(): void {
-    this._identityService.getUser().subscribe((resp) => {
-      console.log(resp);
+    this._userInfoService.loadUserInfo().subscribe((resp) => {
+      if (resp) {
+        this._router.navigate(['/company-features/register-employee']);
+      }
     });
-    // if (this._auth.isAuthenticated()) {
-    //   this._router.navigate(['/company-features/register-employee']);
-    // }
   }
 
   public login(value: AuthForm): void {
-    this._auth.authorize(value).subscribe((authResponse: AuthResponse) => {
-      if (authResponse.isAuthorized) {
+    this._auth.authorize(value).subscribe((authResponse) => {
+      if (authResponse.succeeded) {
         this._router.navigate(['/company-features/register-employee']);
       } else {
-        this.authResponse = authResponse;
+        this.isLoginUnSuccessfull = true;
       }
     });
   }

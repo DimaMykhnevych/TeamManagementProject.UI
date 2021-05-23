@@ -23,13 +23,14 @@ export class AuthService {
 
   public authorize(form: AuthForm): Observable<AuthResponse> {
     return this._http
-      .post<AuthResponse>(environment.apiRoutes.auth.login, form)
+      .post<AuthResponse>(environment.apiRoutes.auth.login, form, {
+        withCredentials: true,
+      })
       .pipe(
         map((response: AuthResponse) => {
           if (!response.isAuthorized) {
             return response;
           }
-          this._tokenService.token = response.token;
           this._currentUserService.userInfo = response.userInfo;
 
           return response;
@@ -38,7 +39,11 @@ export class AuthService {
   }
 
   public unauthorize(): void {
-    this._tokenService.clearToken();
+    this._http
+      .get(environment.apiRoutes.auth.logout, {
+        withCredentials: true,
+      })
+      .subscribe((_) => {});
     this._currentUserService.userInfo = null;
   }
 }

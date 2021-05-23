@@ -13,13 +13,15 @@ export class CompanyService {
   public addCompany(company: Company): Observable<Company> {
     return this._http.post<Company>(
       environment.apiRoutes.companies.post,
-      company
+      company,
+      { withCredentials: true }
     );
   }
 
   public getCompany(id: string): Observable<Company> {
     return this._http.get<Company>(
-      `${environment.apiRoutes.companies.get}/${id}`
+      `${environment.apiRoutes.companies.get}/${id}`,
+      { withCredentials: true }
     );
   }
 }

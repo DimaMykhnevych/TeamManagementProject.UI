@@ -108,10 +108,22 @@
           <div>
             <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
             <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>CEO username</mat-label>
-              <input formControlName="ceoUserName" matInput required />
-              <mat-error *ngIf="ceoUserName?.touched && ceoUserName?.invalid">
-                <div *ngIf="ceoUserName?.errors?.required">
+              <mat-label>CEO First Name</mat-label>
+              <input formControlName="firstName" matInput required />
+              <mat-error *ngIf="firstName?.touched && firstName?.invalid">
+                <div *ngIf="firstName?.errors?.required">
+                  This field is required
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
+            <mat-form-field appearance="fill" [style.width.px]="327">
+              <mat-label>CEO Last Name</mat-label>
+              <input formControlName="lastName" matInput required />
+              <mat-error *ngIf="lastName?.touched && lastName?.invalid">
+                <div *ngIf="lastName?.errors?.required">
                   This field is required
                 </div>
               </mat-error>

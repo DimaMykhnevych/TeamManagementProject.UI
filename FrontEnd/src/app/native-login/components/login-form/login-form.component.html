@@ -10,7 +10,7 @@
         type="text"
         class="form-control"
         formControlName="username"
-        placeholder="Username"
+        placeholder="Your email"
         autocomplete="username"
         required
       />
@@ -19,7 +19,7 @@
       class="alert alert-danger"
       *ngIf="username?.touched && username?.invalid"
     >
-      Username is required!
+      This field is required!
     </div>
   </div>
   <div class="input-group mb-4 d-flex flex-column">
@@ -41,6 +41,9 @@
       *ngIf="password?.touched && password?.invalid"
     >
       Password is required!
+    </div>
+    <div class="alert alert-danger" *ngIf="isLoginUnSuccessfull">
+      Email or password is invalid
     </div>
   </div>
   <div class="row">

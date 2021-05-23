@@ -6,10 +6,11 @@ import { NativeAuthGuard } from './guards';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { UserInfoService } from './services/user-info.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
+  imports: [CommonModule, CookieModule.forRoot()],
 })
 export class AuthModule {
   public static forRoot(): ModuleWithProviders {
