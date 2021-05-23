@@ -1,4 +1,5 @@
 import { Company } from './Company';
+import { TeamProject } from './TeamProject';
 
 export class Project {
   id: string;
@@ -6,7 +7,7 @@ export class Project {
   startDate: Date;
   endDate: Date;
   projectDescription: string;
-  // teamProjects: TeamProjects[];
+  teamProjects: TeamProject[];
   companyId: string;
   company: Company;
 }

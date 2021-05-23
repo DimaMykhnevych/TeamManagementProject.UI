@@ -12,7 +12,8 @@ export class SubscriptionPlanService {
 
   public getSubscriptionPlans(): Observable<SubscriptionPlan[]> {
     return this._http.get<SubscriptionPlan[]>(
-      environment.apiRoutes.subscriptionPlans.get
+      environment.apiRoutes.subscriptionPlans.get,
+      { withCredentials: true }
     );
   }
 }
