@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { environment } from '../../environments/environment';
 import { EventModel } from '../models/EventModel';
 import { Report } from '../models/Report';
@@ -15,7 +16,8 @@ export class ReportService {
       return this.http.post(environment.apiRoutes.report.post, report, { withCredentials: true });
     }
 
-    public get() {
-      return this.http.get(environment.apiRoutes.report.get, { withCredentials: true });
+    public get(date: Date) {
+      let dat = (moment(date)).format('DD-MMM-YYYY HH:mm:ss');
+      return this.http.get(environment.apiRoutes.report.get + `?date=${dat}`, { withCredentials: true });
     }
 }

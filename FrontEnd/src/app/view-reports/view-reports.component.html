@@ -1,7 +1,12 @@
 <div class="header">
   <h2>Reports</h2>
 </div>
-
+<div style="margin-left:30%;margin-top:15px;margin-bottom:15px;display: flex;flex-direction: row">
+  <div *ngFor="let date of datesDisplayed; let i = index">
+   <button (click)="click(i)" *ngIf="i == 1" mat-raised-button class="md-button" color="warn" style="margin-left:5px">{{date.dateName}}</button>
+   <button (click)="click(i)" *ngIf="i != 1" mat-raised-button class="md-button" color="primary" style="margin-left:5px">{{date.dateName}}</button>
+  </div>
+</div>
 <mat-accordion [togglePosition]="'before'" class="header-headers-align">
 <mat-expansion-panel hideToggle disabled>
   <mat-expansion-panel-header class="panelHeader">
@@ -25,30 +30,54 @@
   <mat-expansion-panel-header>
     <mat-panel-title>
       <div>
-        <p class="bolder">Code Review</p>
+        <div class="bolder mgd">{{report.employeeFullName}}</div>
         <span *ngIf="isOpened[i]" class="smaller">
-          {{report.dateOfPublishing | date: "shortDate"}}
-          {{article.publisherFullName}}
+          {{formatDate(i)}}
         </span>
       </div>
       <span *ngIf="!isOpened[i]" class="smaller">
-        {{article.dateOfPublishing | date: "shortDate"}}
+        {{formatDate(i)}}
       </span>
-      <div *ngIf="isOpened[i] && article.isMadeByUser" class="actionContainer">
-        <button id="edit" (click)="openEditDialog(article); $event.stopPropagation();"></button>
-        <button id="delete" (click)="delete(article); $event.stopPropagation();"
-          [disabled]="deleting"></button>
-      </div>
     </mat-panel-title>
   </mat-expansion-panel-header>
   <div class="panelContent">
     <div class="half">
-      <p class="bolder">Problem</p>
-      <p>{{article.problem}}</p>
+      <p class="bolder">Status Type</p>
     </div>
     <div class="half">
-      <p class="bolder">Solution</p>
-      <p>{{article.solution}}</p>
+      <p class="bolder">Comment</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.codeReview" class="panelContent">
+    <div class="half">
+      <p>Code Review Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.active" class="panelContent">
+    <div class="half">
+      <p>Active State Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.resolved" class="panelContent">
+    <div class="half">
+      <p>Resolved State Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div class="panelContent">
+    <div class="half">
+      <p>Additional Comments</p>
+    </div>
+    <div class="half">
+      <p class="descc">{{report.additionalComment}}</p>
     </div>
   </div>
 </mat-expansion-panel>

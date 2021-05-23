@@ -6,13 +6,13 @@
     <form #myForm="ngForm" [formGroup]="reportForm" *ngIf="reportForm" ngNativeValidate>
       <div class="Options">
         <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-        <span class="abc">Code Review</span>
+        <span class="abc">Code Review Task</span>
         <button type="button" (click)="add('codeReview')" mat-raised-button class="md-button tagButton" color="primary">+</button>
         </div>
         <ng-container *ngIf="codeReview">
         <div *ngFor="let codeRev of codeReview; let i = index;trackBy:trackBycr;">
           <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-            {{i+1}}. <input required class="cssd" [(ngModel)]="codeReview[i].value" [ngModelOptions]="{standalone: true}">
+            {{i+1}}. <input class="cssd" [(ngModel)]="codeReview[i].value" [ngModelOptions]="{standalone: true}">
             <mat-icon (click)="delete('codeReview', i)" style="margin-left: 5px;">delete</mat-icon>
           </div>
         </div>
@@ -20,13 +20,13 @@
       </div>
       <div class="Options">
         <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-        <span class="abc">Active</span>
+        <span class="abc">Active state task</span>
         <button type="button" (click)="add('active')" mat-raised-button class="md-button tagButton" color="primary">+</button>
         </div>
         <ng-container *ngIf="active">
         <div *ngFor="let codeRev of active; let i = index;trackBy:trackByactive;">
           <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-            {{i+1}}. <input required class="cssd" [(ngModel)]="active[i].value" [ngModelOptions]="{standalone: true}">
+            {{i+1}}. <input class="cssd" [(ngModel)]="active[i].value" [ngModelOptions]="{standalone: true}">
             <mat-icon (click)="delete('active', i)" style="margin-left: 5px;">delete</mat-icon>
           </div>
         </div>
@@ -34,7 +34,7 @@
       </div>
       <div class="Options">
         <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-        <span class="abc">Resolved</span>
+        <span class="abc">Resolved state task</span>
         <button type="button" (click)="add('resolved')" mat-raised-button class="md-button tagButton" color="primary">+</button>
         </div>
         <ng-container *ngIf="resolved">
