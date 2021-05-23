@@ -10,6 +10,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from '../layout';
 import { EmployeeService } from './services/employee.service';
 import { ProjectService } from './services/project.service';
+import { FooterComponent } from './templates/footer/footer.component';
+import { TeamService } from './services/team.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ProjectService } from './services/project.service';
     ProjectCreationComponent,
     CreateTeamComponent,
     DistributeProjectsComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,6 @@ import { ProjectService } from './services/project.service';
     FormsModule,
     MaterialModule,
   ],
-  providers: [EmployeeService, ProjectService],
+  providers: [EmployeeService, ProjectService, TeamService],
 })
 export class CompanyFeaturesModule {}

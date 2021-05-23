@@ -18,7 +18,7 @@
           #formDirective="ngForm"
           (submit)="onSubmit(formDirective)"
         >
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center m-2">
             <div class="col-lg-6">
               <div>
                 <mat-form-field appearance="fill" [style.width.px]="327">
@@ -49,6 +49,7 @@
                     <mat-option
                       *ngFor="let option of filteredOptions | async"
                       [value]="option"
+                      (onSelectionChange)="mySelectHandler(option)"
                     >
                       {{ option }}
                     </mat-option>
@@ -56,9 +57,47 @@
                 </mat-form-field>
               </div>
             </div>
+            <div class="col-lg-4">
+              <h4>Added employees</h4>
+              <div *ngIf="selectedEmplyees.length !== 0">
+                <div class="row employee-area">
+                  <div
+                    class="col-lg-5 employee-circle d-flex flex-row"
+                    *ngFor="let employee of selectedEmplyees"
+                  >
+                    {{ employee.firstName }} {{ employee.lastName }}
+                    <button
+                      class="btn-sm"
+                      mat-button
+                      (click)="onDeleteBtnClick(employee)"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <button
+                [disabled]="
+                  form.invalid || selectedEmplyees.length === 0 || isTeamAdding
+                "
+                type="submit"
+                mat-raised-button
+                color="primary"
+              >
+                <div class="d-flex justify-content-center" *ngIf="isTeamAdding">
+                  <mat-spinner [diameter]="30"></mat-spinner>
+                </div>
+                <div *ngIf="!isTeamAdding">Create Team</div>
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

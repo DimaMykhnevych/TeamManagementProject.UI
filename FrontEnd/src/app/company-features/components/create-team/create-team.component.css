@@ -18,3 +18,17 @@
   background-color: azure;
   border-radius: 10px;
 }
+
+.employee-area {
+  background-color: rgb(241, 235, 205);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.employee-circle {
+  margin: 7px;
+  background-color: bisque;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 13px;
+}
