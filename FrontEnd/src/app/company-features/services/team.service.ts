@@ -15,4 +15,10 @@ export class TeamService {
       withCredentials: true,
     });
   }
+
+  public getTeams(): Observable<Team[]> {
+    return this._http.get<Team[]>(environment.apiRoutes.team.get, {
+      withCredentials: true,
+    });
+  }
 }

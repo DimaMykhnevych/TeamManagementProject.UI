@@ -1,2 +1,102 @@
-<div class="main"><p>distribute-projects works!</p></div>
+<div class="main">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-12 mb-2">
+        <h2 class="text-center">
+          Here you can distribute projects between teams
+        </h2>
+      </div>
+      <div class="col-lg-12">
+        <div class="line"></div>
+        <p class="description text-center m-4">
+          Distribute excisting projects by different teams. Feel the form below,
+          to assign project to a team
+        </p>
+        <div class="line"></div>
+      </div>
+      <div class="form-wrapper w-100">
+        <form
+          [formGroup]="form"
+          #formDirective="ngForm"
+          (submit)="onSubmit(formDirective)"
+        >
+          <div class="row d-flex justify-content-center m-2">
+            <div class="col-lg-5">
+              <mat-form-field [style.width.px]="327">
+                <mat-label>Select Project</mat-label>
+                <input
+                  type="text"
+                  placeholder="Pick one"
+                  aria-label="Project name"
+                  matInput
+                  [formControl]="projectId"
+                  [matAutocomplete]="auto"
+                />
+                <mat-autocomplete
+                  autoActiveFirstOption
+                  #auto="matAutocomplete"
+                  [displayWith]="projectDisplayFn"
+                >
+                  <mat-option
+                    *ngFor="let project of filteredProjects | async"
+                    [value]="project"
+                  >
+                    {{ project.name }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="projectId?.touched && projectId?.invalid">
+                  <div *ngIf="projectId?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-5">
+              <mat-form-field [style.width.px]="327">
+                <mat-label>Select Team</mat-label>
+                <input
+                  type="text"
+                  placeholder="Pick one"
+                  aria-label="Team name"
+                  matInput
+                  [formControl]="teamId"
+                  [matAutocomplete]="auto2"
+                />
+                <mat-autocomplete
+                  autoActiveFirstOption
+                  #auto2="matAutocomplete"
+                  [displayWith]="teamDisplayFn"
+                >
+                  <mat-option
+                    *ngFor="let team of filteredTeams | async"
+                    [value]="team"
+                  >
+                    {{ team.teamName }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="teamId?.touched && teamId?.invalid">
+                  <div *ngIf="teamId?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <button
+                [disabled]="form.invalid"
+                type="submit"
+                mat-raised-button
+                color="primary"
+              >
+                Assign project
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer [isFixed]="true"></app-footer>

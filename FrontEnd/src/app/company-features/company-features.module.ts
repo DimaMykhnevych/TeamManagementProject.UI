@@ -12,6 +12,7 @@ import { EmployeeService } from './services/employee.service';
 import { ProjectService } from './services/project.service';
 import { FooterComponent } from './templates/footer/footer.component';
 import { TeamService } from './services/team.service';
+import { TeamProjectService } from './services/team-project.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,6 @@ import { TeamService } from './services/team.service';
     FormsModule,
     MaterialModule,
   ],
-  providers: [EmployeeService, ProjectService, TeamService],
+  providers: [EmployeeService, ProjectService, TeamService, TeamProjectService],
 })
 export class CompanyFeaturesModule {}

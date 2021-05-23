@@ -60,9 +60,14 @@ export const environment = {
     },
     project: {
       post: `${API_BASE_URL}/project`,
+      get: `${API_BASE_URL}/project`,
     },
     team: {
       post: `${API_BASE_URL}/team`,
+      get: `${API_BASE_URL}/team`,
+    },
+    teamProject: {
+      post: `${API_BASE_URL}/teamProject`,
     },
   },
   stripeKeys: {

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProjectCreateModel } from '../../models/ProjectCreateModel';
 import { environment } from 'src/environments/environment';
+import { Project } from 'src/app/models/Project';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +19,11 @@ export class ProjectService {
       project,
       { withCredentials: true }
     );
+  }
+
+  public getProjects(): Observable<Project[]> {
+    return this._http.get<Project[]>(environment.apiRoutes.project.get, {
+      withCredentials: true,
+    });
   }
 }
