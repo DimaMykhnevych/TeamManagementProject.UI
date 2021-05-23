@@ -17,14 +17,14 @@ import { ViewPollsComponent } from './view-polls/view-polls.component';
 import { SubscriptionPaymentComponent } from './company-registration/components/subscription-payment/subscription-payment.component';
 import { ViewEventsComponent } from './view-events/view-events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
-import { LoginComponent } from './native-login/components/login/login.component';
+import { CreateReportComponent } from './create-report/create-report.component';
+import { ViewReportsComponent } from './view-reports/view-reports.component';import { LoginComponent } from './native-login/components/login/login.component';
 import { RegisterEmployeeComponent } from './company-features/components/register-employee/register-employee.component';
 import { NativeAuthGuard } from './auth/guards';
 import { NavbarComponent } from './company-features/templates/navbar/navbar.component';
 import { ProjectCreationComponent } from './company-features/components/project-creation/project-creation.component';
 import { CreateTeamComponent } from './company-features/components/create-team/create-team.component';
-import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';
-const routes: Routes = [
+import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
   { path: 'subscription-payment', component: SubscriptionPaymentComponent },
@@ -109,6 +109,16 @@ const routes: Routes = [
         component: CreateEventComponent,
         canActivate: [AdminGuard],
       },
+      {
+        path: 'createReports',
+        component: CreateReportComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'viewReports',
+        component: ViewReportsComponent,
+        canActivate: [AdminGuard],
+      }
     ],
   },
   { path: '**', redirectTo: '' },
@@ -116,6 +126,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -54,6 +54,10 @@ export const environment = {
       get: `${API_BASE_URL}/events`,
       changeAttending: `${API_BASE_URL}/events/changeAttending`,
     },
+    report: {
+      post: `${API_BASE_URL}/reports`,
+      get: `${API_BASE_URL}/reports`,
+    },
     employee: {
       post: `${API_BASE_URL}/employee`,
       get: `${API_BASE_URL}/employee`,

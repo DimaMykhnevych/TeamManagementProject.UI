@@ -4,6 +4,7 @@ import { EventsService } from './../services/events.service';
 import { formatDate } from '@angular/common';
 import * as moment from 'moment';
 import { UserEventModel } from './../models/UserEventModel';
+import { DateModel } from './../models/DateModel';
 
 @Component({
   selector: 'app-view-events',
@@ -12,6 +13,7 @@ import { UserEventModel } from './../models/UserEventModel';
 })
 export class ViewEventsComponent implements OnInit {
   public events: Array<GetEventModel>;
+  public datesDisplayed: Array<DateModel> = new Array<DateModel>();
   constructor(private eventsService: EventsService) {
 
   }

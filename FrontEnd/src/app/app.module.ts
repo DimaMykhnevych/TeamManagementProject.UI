@@ -57,6 +57,8 @@ import { AuthModule } from './auth/auth.module';
 import { CompanyFeaturesModule } from './company-features/company-features.module';
 import { ToastrModule } from 'ngx-toastr';
 import { CookieModule } from 'ngx-cookie';
+import { CreateReportComponent } from './create-report/create-report.component';
+import { ViewReportsComponent } from './view-reports/view-reports.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { CookieModule } from 'ngx-cookie';
     ViewPollsComponent,
     ViewEventsComponent,
     CreateEventComponent,
+    CreateReportComponent,
+    ViewReportsComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +107,7 @@ import { CookieModule } from 'ngx-cookie';
     MatCheckboxModule,
     CompanyRegistrationModule,
     MatIconModule,
+    MatRadioModule,
     ToastrModule.forRoot(),
     NativeLoginModule,
     AuthModule.forRoot(),

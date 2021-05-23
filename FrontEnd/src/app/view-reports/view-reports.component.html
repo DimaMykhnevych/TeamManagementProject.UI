@@ -1,0 +1,84 @@
+<div class="header">
+  <h2>Reports</h2>
+</div>
+<div style="margin-left:30%;margin-top:15px;margin-bottom:15px;display: flex;flex-direction: row">
+  <div *ngFor="let date of datesDisplayed; let i = index">
+   <button (click)="click(i)" *ngIf="i == 1" mat-raised-button class="md-button" color="warn" style="margin-left:5px">{{date.dateName}}</button>
+   <button (click)="click(i)" *ngIf="i != 1" mat-raised-button class="md-button" color="primary" style="margin-left:5px">{{date.dateName}}</button>
+  </div>
+</div>
+<mat-accordion [togglePosition]="'before'" class="header-headers-align">
+<mat-expansion-panel hideToggle disabled>
+  <mat-expansion-panel-header class="panelHeader">
+    <mat-panel-title>
+      Reports
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngIf="!reports || reports.length === 0"
+  hideToggle disabled>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      No reports were found :(
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngFor="let report of reports; index as i"
+  (opened)="open(i)" (closed)="close(i)">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <div>
+        <div class="bolder mgd">{{report.employeeFullName}}</div>
+        <span *ngIf="isOpened[i]" class="smaller">
+          {{formatDate(i)}}
+        </span>
+      </div>
+      <span *ngIf="!isOpened[i]" class="smaller">
+        {{formatDate(i)}}
+      </span>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="panelContent">
+    <div class="half">
+      <p class="bolder">Status Type</p>
+    </div>
+    <div class="half">
+      <p class="bolder">Comment</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.codeReview" class="panelContent">
+    <div class="half">
+      <p>Code Review Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.active" class="panelContent">
+    <div class="half">
+      <p>Active State Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div *ngFor="let codeRev of report.resolved" class="panelContent">
+    <div class="half">
+      <p>Resolved State Task</p>
+    </div>
+    <div class="half">
+      <p class="desc">{{codeRev}}</p>
+    </div>
+  </div>
+  <div class="panelContent">
+    <div class="half">
+      <p>Additional Comments</p>
+    </div>
+    <div class="half">
+      <p class="descc">{{report.additionalComment}}</p>
+    </div>
+  </div>
+</mat-expansion-panel>
+</mat-accordion>
