@@ -21,11 +21,17 @@ export class UserInfoService {
       .get(environment.apiRoutes.auth.userInfo, {
         withCredentials: true,
       })
-      .subscribe((userInfo) => {
-        this.currentUserService.userInfo = userInfo;
-        loadSubject.next(userInfo);
-        loadSubject.complete();
-      });
+      .subscribe(
+        (userInfo) => {
+          this.currentUserService.userInfo = userInfo;
+          loadSubject.next(userInfo);
+          loadSubject.complete();
+        },
+        (err) => {
+          loadSubject.next(err);
+          loadSubject.complete();
+        }
+      );
 
     return loadSubject.asObservable();
   }
