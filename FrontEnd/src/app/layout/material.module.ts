@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const MATERIAL_MODULES = [
   MatButtonModule,
@@ -23,6 +24,7 @@ const MATERIAL_MODULES = [
   MatProgressSpinnerModule,
   MatSidenavModule,
   MatSelectModule,
+  MatAutocompleteModule,
 ];
 
 @NgModule({

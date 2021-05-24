@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CompanyService } from '../../services/company.service';
 
 @Component({
@@ -15,11 +16,13 @@ import { CompanyService } from '../../services/company.service';
 })
 export class CompanyRegistrationPageComponent implements OnInit {
   public form: FormGroup;
+  public isCompanyAdding: boolean;
 
   constructor(
     private _builder: FormBuilder,
     private _router: Router,
-    private _companyServise: CompanyService
+    private _companyServise: CompanyService,
+    private _toastr: ToastrService
   ) {
     this.form = this._builder.group({});
   }
@@ -44,7 +47,8 @@ export class CompanyRegistrationPageComponent implements OnInit {
           '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$_!%*?&])[A-Za-z\\d@$_!%*?&]{7,}$'
         ),
       ]),
-      ceoUserName: new FormControl('', Validators.required),
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
     });
   }
   get name() {
@@ -65,8 +69,12 @@ export class CompanyRegistrationPageComponent implements OnInit {
   get ceoPassword() {
     return this.form.get('ceoPassword');
   }
-  get ceoUserName() {
-    return this.form.get('ceoUserName');
+  get firstName() {
+    return this.form.get('firstName');
+  }
+
+  get lastName() {
+    return this.form.get('lastName');
   }
 
   public onBackToHomeClick(): void {
@@ -74,12 +82,19 @@ export class CompanyRegistrationPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    this.isCompanyAdding = true;
     this._companyServise.addCompany(this.form.value).subscribe((resp) => {
+      this.isCompanyAdding = false;
+      this._toastr.success('Company registration was completed successfully');
       this._router.navigate(['/subscription-payment'], {
         queryParams: {
           companyId: resp.id,
         },
       });
     });
+  }
+
+  public onSignInBtnClick(): void {
+    this._router.navigate(['login']);
   }
 }

@@ -7,13 +7,20 @@ import { CompanyService } from './services/company.service';
 import { SubscriptionPaymentComponent } from './components/subscription-payment/subscription-payment.component';
 import { SubscriptionPlanService } from './services/subscription-plan.service';
 import { SubscriptionService } from './services/subscription.service';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     CompanyRegistrationPageComponent,
     SubscriptionPaymentComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MaterialModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    ToastrModule.forRoot(),
+  ],
   providers: [CompanyService, SubscriptionPlanService, SubscriptionService],
 })
 export class CompanyRegistrationModule {}

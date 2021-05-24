@@ -23,7 +23,14 @@
 
   <div class="nav-btn">
     <div class="btn1">
-      <button class="btn nav-btn1">Sign In</button>
+      <button
+        class="btn nav-btn1"
+        (click)="onSignInClick()"
+        [disabled]="isSigninLoading"
+      >
+        <div *ngIf="isSigninLoading">Sign in...</div>
+        <div *ngIf="!isSigninLoading">Sign In</div>
+      </button>
     </div>
 
     <div class="btn2">
@@ -55,8 +62,8 @@
         #Manage your team,<br />
         Manage your life!
       </h3>
-      <button class="btn nav-btn3">
-        Sign Up with 30 days trial!
+      <button class="btn nav-btn3" routerLink="company-registration">
+        Manage your company now!
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

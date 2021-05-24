@@ -37,17 +37,26 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthorizedMainComponent } from './authorized-main/authorized-main.component';
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { PollsService } from './services/polls.services';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ViewPollsComponent } from './view-polls/view-polls.component';
-import {MatRadioModule} from '@angular/material/radio'
+import { MatRadioModule } from '@angular/material/radio';
 import { CompanyRegistrationModule } from './company-registration/company-registration.module';
 import { ViewEventsComponent } from './view-events/view-events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventsService } from './services/events.service';
-import { NgxMatDatetimePickerModule,  NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { NativeLoginModule } from './native-login/native-login.module';
+import { AuthModule } from './auth/auth.module';
+import { CompanyFeaturesModule } from './company-features/company-features.module';
+import { ToastrModule } from 'ngx-toastr';
+import { CookieModule } from 'ngx-cookie';
 import { CreateReportComponent } from './create-report/create-report.component';
 import { ViewReportsComponent } from './view-reports/view-reports.component';
 import { EditPollComponent } from './edit-poll/edit-poll.component';
@@ -81,7 +90,7 @@ import { EditPollComponent } from './edit-poll/edit-poll.component';
     EditPollComponent,
   ],
   imports: [
-BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,
@@ -101,13 +110,18 @@ BrowserModule,
     CompanyRegistrationModule,
     MatIconModule,
     MatRadioModule,
+    ToastrModule.forRoot(),
+    NativeLoginModule,
+    AuthModule.forRoot(),
+    CompanyFeaturesModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    NgxMatNativeDateModule
+    NgxMatNativeDateModule,
+    CookieModule.forRoot(),
   ],
   providers: [ArticlesService, TagsService, PollsService, EventsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

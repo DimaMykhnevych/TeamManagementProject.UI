@@ -1,0 +1,25 @@
+.main {
+  padding-top: 100px;
+}
+
+.line {
+  background-color: black;
+  width: 100%;
+  height: 3px;
+}
+.description {
+  font-size: 1.3em;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.form-wrapper {
+  margin: 10px;
+  padding: 15px;
+  background-color: azure;
+  border-radius: 10px;
+}
+
+.textArea {
+  background-color: rgb(207, 239, 243);
+  border-radius: 5px;
+}

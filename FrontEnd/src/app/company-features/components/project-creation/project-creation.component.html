@@ -1,0 +1,127 @@
+<div class="main">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-12 mb-2">
+        <h2 class="text-center">Here you can create projects</h2>
+      </div>
+      <div class="col-lg-12">
+        <div class="line"></div>
+        <p class="description text-center m-4">
+          Here you can create projects to assign them to the teams. Fill the
+          form below to create project
+        </p>
+        <div class="line"></div>
+      </div>
+
+      <div class="form-wrapper w-100">
+        <form
+          [formGroup]="form"
+          #formDirective="ngForm"
+          (submit)="onSubmit(formDirective)"
+        >
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+              <div>
+                <mat-form-field appearance="fill" [style.width.px]="327">
+                  <mat-label>Project Name</mat-label>
+                  <input formControlName="name" matInput required />
+                  <mat-error *ngIf="name?.touched && name?.invalid">
+                    <div *ngIf="name?.errors?.required">
+                      This field is required
+                    </div>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="fill" [style.width.px]="327">
+                  <mat-label>Start date</mat-label>
+                  <input
+                    formControlName="startDate"
+                    matInput
+                    type="datetime"
+                    [matDatepicker]="startDatePicker"
+                    required
+                  />
+                  <mat-error *ngIf="startDate?.touched && startDate?.invalid">
+                    <div *ngIf="startDate?.errors?.required">
+                      This field is required
+                    </div>
+                  </mat-error>
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="startDatePicker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #startDatePicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="fill" [style.width.px]="327">
+                  <mat-label>End date</mat-label>
+                  <input
+                    formControlName="endDate"
+                    matInput
+                    type="datetime"
+                    [matDatepicker]="endDatePicker"
+                    required
+                  />
+                  <mat-error *ngIf="endDate?.touched && endDate?.invalid">
+                    <div *ngIf="endDate?.errors?.required">
+                      This field is required
+                    </div>
+                  </mat-error>
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="endDatePicker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #endDatePicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div>
+                <mat-form-field [style.width.px]="327">
+                  <mat-label>Project Description</mat-label>
+                  <textarea
+                    matInput
+                    formControlName="projectDescription"
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="5"
+                    cdkAutosizeMaxRows="10"
+                    class="textArea"
+                  ></textarea>
+                  <mat-error
+                    *ngIf="
+                      projectDescription?.touched && projectDescription?.invalid
+                    "
+                  >
+                    <div *ngIf="projectDescription?.errors?.required">
+                      This field is required
+                    </div>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center">
+                <button
+                  type="submit"
+                  mat-raised-button
+                  color="primary"
+                  [disabled]="form.invalid || isProjectAdding"
+                >
+                  <div
+                    class="d-flex justify-content-center"
+                    *ngIf="isProjectAdding"
+                  >
+                    <mat-spinner [diameter]="30"></mat-spinner>
+                  </div>
+                  <div *ngIf="!isProjectAdding">Create Project</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

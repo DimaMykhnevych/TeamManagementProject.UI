@@ -9,7 +9,12 @@ export const environment = {
       getUser: `${API_BASE_URL}/identity/user`,
       getUsers: `${API_BASE_URL}/identity/users`,
       makeAdmin: `${API_BASE_URL}/identity/make-admin`,
-      getTeam : `${API_BASE_URL}/identity/getTeam`
+      getTeam: `${API_BASE_URL}/identity/getTeam`,
+    },
+    auth: {
+      userInfo: `${API_BASE_URL}/auth/user-info`,
+      login: `${API_BASE_URL}/auth/login`,
+      logout: `${API_BASE_URL}/auth/logout`,
     },
     articles: {
       getById: `${API_BASE_URL}/articles`,
@@ -46,15 +51,30 @@ export const environment = {
     subscription: {
       put: `${API_BASE_URL}/subscriptions`,
     },
-    event : {
+    event: {
       post: `${API_BASE_URL}/events`,
       get: `${API_BASE_URL}/events`,
-      changeAttending: `${API_BASE_URL}/events/changeAttending`
+      changeAttending: `${API_BASE_URL}/events/changeAttending`,
     },
-    report : {
+    report: {
       post: `${API_BASE_URL}/reports`,
       get: `${API_BASE_URL}/reports`,
-    }
+    },
+    employee: {
+      post: `${API_BASE_URL}/employee`,
+      get: `${API_BASE_URL}/employee`,
+    },
+    project: {
+      post: `${API_BASE_URL}/project`,
+      get: `${API_BASE_URL}/project`,
+    },
+    team: {
+      post: `${API_BASE_URL}/team`,
+      get: `${API_BASE_URL}/team`,
+    },
+    teamProject: {
+      post: `${API_BASE_URL}/teamProject`,
+    },
   },
   stripeKeys: {
     publishableKey:
