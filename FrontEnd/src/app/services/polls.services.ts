@@ -20,4 +20,12 @@ export class PollsService {
     public makeVote(pollId: string, optionId: string) {
       return this.http.post(environment.apiRoutes.polls.makeVote, {pollId: pollId, optionId: optionId}, { withCredentials: true } );
     }
+
+    public delete(pollId){
+      return this.http.delete(environment.apiRoutes.polls.delete + `?id=${pollId}`, { withCredentials: true })
+    }
+
+    public put(pollId){
+      return this.http.delete(environment.apiRoutes.polls.put + `?id=${pollId}`, { withCredentials: true })
+    }
 }

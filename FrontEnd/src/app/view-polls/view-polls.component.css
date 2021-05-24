@@ -9,3 +9,31 @@ h4 {
   margin-top:10px;
   margin-left: 20px;
 }
+#delete
+{
+    background-image: url(../../assets/images/delete.svg);
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    outline: none;
+    margin-left:5%;
+}
+
+#edit{
+  background-image: url(../../assets/images/edit.svg);
+  background-color: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border: none;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  outline: none;
+  margin-left:1%;
+}

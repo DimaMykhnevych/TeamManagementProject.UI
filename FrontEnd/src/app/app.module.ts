@@ -50,6 +50,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { CreateReportComponent } from './create-report/create-report.component';
 import { ViewReportsComponent } from './view-reports/view-reports.component';
+import { EditPollComponent } from './edit-poll/edit-poll.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ViewReportsComponent } from './view-reports/view-reports.component';
     CreateEventComponent,
     CreateReportComponent,
     ViewReportsComponent,
+    EditPollComponent,
   ],
   imports: [
 BrowserModule,

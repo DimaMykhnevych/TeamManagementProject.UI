@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Poll } from './../models/Poll';
 import { PollsService } from './../services/polls.services';
 import { Option } from './../models/Option';
+import { NotificationService } from '../services/notification.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-view-polls',
@@ -10,7 +12,8 @@ import { Option } from './../models/Option';
 })
 export class ViewPollsComponent implements OnInit {
   polls: Array<Poll>;
-  constructor(private pollService: PollsService) {
+  deleting: boolean;
+  constructor(private pollService: PollsService, private notificationService: NotificationService,) {
 
   }
 
@@ -30,4 +33,29 @@ export class ViewPollsComponent implements OnInit {
     return item.name + index + item.value;
   }
 
+  public delete(id: string): void {
+    this.deleting = true;
+    let message = '';
+
+    this.pollService.delete(id).pipe(
+      finalize(() => {
+        this.deleting = false;
+        this.notificationService.displayMessage(message);
+      })
+    ).subscribe({
+      next: (_) => {
+        message = 'The poll was successfully deleted!';
+        var i = this.polls.length;
+
+        while(i--){
+          if(this.polls[i].id == id){
+            this.polls.splice(i, 1);
+          }
+        }
+      },
+      error: (_) => {
+        message = _.error?.message ?? 'Something went wrong. Please, try again later!';
+      }
+    });
+  }
 }

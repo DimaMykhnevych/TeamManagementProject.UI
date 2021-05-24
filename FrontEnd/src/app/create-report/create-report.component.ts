@@ -7,6 +7,7 @@ import { Report } from '../models/Report';
 import { ReportRecord } from '../models/ReportRecord';
 import { NotificationService } from '../services/notification.service';
 import { ReportService } from './../services/report.service';
+import { Option } from '../models/Option';
 
 @Component({
   selector: 'app-create-report',

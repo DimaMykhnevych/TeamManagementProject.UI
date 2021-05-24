@@ -5,4 +5,5 @@ export class Poll {
   public options: Array<Option>
   public createdByName: string;
   public id: string;
+  public isMadeByUser: boolean;
 }

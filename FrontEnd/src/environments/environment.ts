@@ -33,6 +33,8 @@ export const environment = {
       post: `${API_BASE_URL}/polls`,
       get: `${API_BASE_URL}/polls`,
       makeVote: `${API_BASE_URL}/polls/make-vote`,
+      delete: `${API_BASE_URL}/polls`,
+      put: `${API_BASE_URL}/polls`
     },
     companies: {
       post: `${API_BASE_URL}/companies`,
@@ -51,7 +53,7 @@ export const environment = {
     },
     report : {
       post: `${API_BASE_URL}/reports`,
-      get: `${API_BASE_URL}/reports`
+      get: `${API_BASE_URL}/reports`,
     }
   },
   stripeKeys: {
