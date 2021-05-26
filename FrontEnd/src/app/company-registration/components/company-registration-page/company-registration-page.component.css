@@ -131,3 +131,29 @@ a {
     transform: rotate(360deg);
   }
 }
+.flexWraper{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+footer{
+  bottom: 0;
+  background-color: #414143;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+@media all and (max-width:992px) {
+  .footer{
+    bottom: 0;
+    text-align: center;
+    position: relative;
+  }
+}
+@media all and(max-width:347px) {
+  .mat-form-field{
+  width: 100%;
+  }
+}
