@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthForm } from '../../../models/LoginFormModel';
+import { IdentityService } from './../../../services/identity.service';
 
 @Component({
   selector: 'app-login-form',
@@ -22,11 +23,21 @@ export class LoginFormComponent implements OnInit {
     return this._isLoginUnSuccessfull;
   }
 
+  @ViewChild('logingoogleform') loginGoogleFormElement
+
+  googlesubmit(){
+    this.loginGoogleFormElement.nativeElement.submit();
+  }
+
   public form: FormGroup;
   public submitted: boolean = false;
+  public loginUrl: string;
   private _isLoginUnSuccessfull: boolean;
 
-  constructor(private _builder: FormBuilder) {
+  constructor(private _builder: FormBuilder, private identityService: IdentityService) {
+    [this.loginUrl] = [
+      this.identityService.getLoginUrl()
+    ];
     this.form = this._builder.group({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),

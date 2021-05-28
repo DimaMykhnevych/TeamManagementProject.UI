@@ -1,4 +1,4 @@
-<a class="title" routerLink="/home"> Team Management </a>
+<a class="title" href="#"> Team Management </a>
 
 <div *ngIf="fullName" class="rightheader">
   <div class="search">
@@ -7,9 +7,29 @@
       <button type="submit"></button>
     </form>
   </div>
-  <div class="fullname">
-    {{ fullName }}
-  </div>
+  <a
+          class="nav-link dropdown-toggle colored"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          *ngIf="fullName !== null"
+          color="white"
+        >
+          {{ fullName }}
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+        <a class="dropdown-item" *ngIf="isCeo" routerLink="/company-features/register-employee" role="button"
+        >Go to portal management</a
+      >
+          <button class="dropdown-item" (click)="onLogOutButtonCLick()">
+            Log Out
+          </button>
+        </div>
 </div>
-
 <app-login-register *ngIf="fullName === null"></app-login-register>

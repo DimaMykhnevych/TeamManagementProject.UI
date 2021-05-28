@@ -20,6 +20,12 @@ export class NavbarComponent implements OnInit {
     this._userInfoService.loadUserInfo().subscribe((resp) => {
       if (resp) {
         this.userInfo = resp;
+        if(resp.position != "CEO"){
+          this._router.navigate(['/home']);
+        }
+      }
+      else {
+        this._router.navigate(['']);
       }
     });
   }

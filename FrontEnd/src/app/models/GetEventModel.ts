@@ -8,4 +8,5 @@ export class GetEventModel {
   public dateTime: Date;
   public createdByName: string;
   public id: string;
+  public isMadeByUser: boolean;
 }

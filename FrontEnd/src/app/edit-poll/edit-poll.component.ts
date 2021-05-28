@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { Poll } from '../models/Poll';
 import { NotificationService } from '../services/notification.service';
@@ -15,18 +15,20 @@ import { Option } from '../models/Option';
 })
 export class EditPollComponent implements OnInit {
   public saving = false;
+  public id: string;
   pollForm: FormGroup;
-  options: Array<Option> = [ new Option("") ];
+  poll: Poll;
 
   constructor(
     private pollsService: PollsService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   addOption(): void {
-    this.options.push(new Option(""));
+    this.poll.options.push(new Option(""));
   }
 
   trackByIndex(index: number, obj: any): any {
@@ -34,14 +36,20 @@ export class EditPollComponent implements OnInit {
   }
 
   deleteOption(index: number):void {
-    this.options.splice(index, 1);
+    this.poll.options.splice(index, 1);
   }
 
   ngOnInit(): void {
-    this.pollForm = this.formBuilder.group({
-      name: new FormControl(''),
-      doesAllowMultiple: new FormControl(false)
-    });
+    this.route.queryParams.subscribe(params => {
+      this.id = params['id'];
+    })
+    this.pollsService.getById(this.id).subscribe((poll: Poll)=>{
+      this.poll = poll;
+      this.pollForm = this.formBuilder.group({
+        name: new FormControl(this.poll.name),
+        doesAllowMultiple: new FormControl(this.poll.doesAllowMultiple)
+      });
+    })
   }
 
   save(form) {
@@ -51,11 +59,12 @@ export class EditPollComponent implements OnInit {
 
     this.saving = true;
     const poll: Poll = this.pollForm.value;
-    poll.options = this.options;
+    poll.options = this.poll.options;
+    poll.id = this.id;
     let message: string;
 
     this.pollsService
-      .create(poll)
+      .put(poll)
       .pipe(
         finalize(() => {
           this.saving = false;
@@ -64,7 +73,7 @@ export class EditPollComponent implements OnInit {
       )
       .subscribe({
         next: () => {
-          message = 'The poll was successfully saved!';
+          message = 'The poll was successfully updated!';
           this.router.navigateByUrl(`/home`);
         },
         error: (errors: HttpErrorResponse) => {

@@ -24,7 +24,9 @@ import { NativeAuthGuard } from './auth/guards';
 import { NavbarComponent } from './company-features/templates/navbar/navbar.component';
 import { ProjectCreationComponent } from './company-features/components/project-creation/project-creation.component';
 import { CreateTeamComponent } from './company-features/components/create-team/create-team.component';
-import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';const routes: Routes = [
+import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';
+import { EditPollComponent } from './edit-poll/edit-poll.component';
+const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
   { path: 'subscription-payment', component: SubscriptionPaymentComponent },
@@ -118,6 +120,11 @@ import { DistributeProjectsComponent } from './company-features/components/distr
         path: 'viewReports',
         component: ViewReportsComponent,
         canActivate: [AdminGuard],
+      },
+      {
+        path: 'edit-poll',
+        component: EditPollComponent,
+        canActivate: [AuthGuard],
       }
     ],
   },

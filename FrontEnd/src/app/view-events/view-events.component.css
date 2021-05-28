@@ -61,3 +61,17 @@ h4 {
   width:30%;
   word-wrap: break-word;
 }
+#delete
+{
+    background-image: url(../../assets/images/delete.svg);
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    outline: none;
+    margin-left:2%;
+}

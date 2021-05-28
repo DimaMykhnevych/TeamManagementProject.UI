@@ -6,7 +6,7 @@
   <hr/>
     <div *ngFor="let poll of polls"><div style="display: flex;flex-direction: row;">
     <div class="block">{{poll.name}}</div><div style="margin-left:3%;">{{poll.createdByName}}</div><button *ngIf="poll.isMadeByUser" id="delete" (click)="delete(poll.id);"
-      [disabled]="deleting"></button> <button id="edit"></button></div>
+      [disabled]="deleting"></button> <button id="edit" *ngIf="poll.isMadeByUser" (click)="edit(poll.id)"></button></div>
     <div class="options" *ngFor="let option of poll.options;let i = index; trackBy: trackByy">
       <div *ngIf="poll.doesAllowMultiple" style="display: flex;flex-direction: row;">
         <mat-checkbox [checked]="option.checked" style="cursor: pointer;" [name]="option.name + i" color="primary" (click)="makeVote(poll.id, option.id)"></mat-checkbox>&nbsp;<div style="margin-top:-2px">{{option.name}}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="margin-top:-2px">{{option.value}}%</div>

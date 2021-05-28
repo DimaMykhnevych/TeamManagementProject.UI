@@ -1,7 +1,7 @@
 
 <div class="pollCreationFormBlock">
   <h4>
-    Create poll
+    Update poll
   </h4>
   <hr/>
   <form #myForm="ngForm" [formGroup]="pollForm" *ngIf="pollForm" ngNativeValidate>
@@ -12,10 +12,10 @@
       <label class="abc">Options:</label>
       <button type="button" (click)="addOption()" mat-raised-button class="md-button tagButton" color="primary">Add Option</button>
       </div>
-      <ng-container *ngIf="options">
-      <div *ngFor="let option of options; let i = index;trackBy:trackByIndex;">
+      <ng-container *ngIf="poll.options">
+      <div *ngFor="let option of poll.options; let i = index;trackBy:trackByIndex;">
         <div style="display: flex; flex-direction:row; justify-content: flex-start;align-items: flex-start;">
-          {{i+1}}. <input required class="cssd" [(ngModel)]="options[i].name" [ngModelOptions]="{standalone: true}">
+          {{i+1}}. <input required class="cssd" [(ngModel)]="poll.options[i].name" [ngModelOptions]="{standalone: true}">
           <mat-icon (click)="deleteOption(i)" style="margin-left: 5px;">delete</mat-icon>
         </div>
       </div>

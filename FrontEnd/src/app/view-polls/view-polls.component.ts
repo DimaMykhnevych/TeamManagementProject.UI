@@ -4,6 +4,7 @@ import { PollsService } from './../services/polls.services';
 import { Option } from './../models/Option';
 import { NotificationService } from '../services/notification.service';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-polls',
@@ -13,7 +14,7 @@ import { finalize } from 'rxjs/operators';
 export class ViewPollsComponent implements OnInit {
   polls: Array<Poll>;
   deleting: boolean;
-  constructor(private pollService: PollsService, private notificationService: NotificationService,) {
+  constructor(private pollService: PollsService, private notificationService: NotificationService, private router: Router) {
 
   }
 
@@ -31,6 +32,10 @@ export class ViewPollsComponent implements OnInit {
 
   trackByy(index, item){
     return item.name + index + item.value;
+  }
+
+  edit(id: string){
+    this.router.navigateByUrl("/edit-poll?id=" + id);
   }
 
   public delete(id: string): void {

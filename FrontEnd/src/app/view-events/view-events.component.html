@@ -3,12 +3,18 @@
   <h4>
     Events
   </h4>
-  <hr/>
+  <div style="margin-left:30%;margin-top:15px;margin-bottom:15px;display: flex;flex-direction: row">
+    <div *ngFor="let date of datesDisplayed; let i = index">
+     <button (click)="click(i)" *ngIf="i == 1" mat-raised-button class="md-button" color="warn" style="margin-left:5px">{{date.dateName}}</button>
+     <button (click)="click(i)" *ngIf="i != 1" mat-raised-button class="md-button" color="primary" style="margin-left:5px">{{date.dateName}}</button>
+    </div>
+  </div>
     <div class="block" *ngFor="let event of events">
-    <span style="font-weight: bold;">Event -</span><span> {{event.title}}</span>&nbsp;&nbsp;<span style="font-weight: bold;">Created By -</span><span> {{event.createdByName}}</span>
+    <span style="font-weight: bold;">Event -</span><span> {{event.title}}</span>&nbsp;&nbsp;<span style="font-weight: bold;">Created By -</span><span> {{event.createdByName}}</span> <span><button *ngIf="event.isMadeByUser" id="delete" (click)="delete(event.id);"
+      [disabled]="deleting"></button></span>
     <div style="font-weight: bold;">Attendies:</div>
     <span *ngFor="let attendie of event.attendies">
-      {{attendie.email}} - {{attendie.status}};&nbsp;
+      {{attendie.email}} - <span *ngIf="attendie.status == 'Yes'" style="color:#72b52a; font-weight: bold">{{attendie.status}}</span><span *ngIf="attendie.status == 'Unknown'" style="color:black; font-weight: bold">{{attendie.status}}</span><span *ngIf="attendie.status == 'No'" style="color:#b77327; font-weight: bold">{{attendie.status}}</span><span *ngIf="attendie.status == 'Maybe'" style="color:#10A9ED; font-weight: bold">{{attendie.status}}</span>;&nbsp;
     </span>
     <div style="font-weight: bold;">Time: {{formatDate(event.dateTime)}}</div>
     <div style="font-weight: bold;">Description: </div>

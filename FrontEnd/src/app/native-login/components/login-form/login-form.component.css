@@ -1,0 +1,25 @@
+.google-btn {
+  width: 210px;
+  height: 40px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto 0 auto;
+  font-size: 16px;
+  color: #383838;
+  font-weight: 500;
+  box-shadow: 0 2px 8px 2px rgba(56, 56, 56, 0.09);
+  padding-left:33px;
+  background-image:url(../../../../assets/images/google.png);
+  background-repeat:no-repeat;
+  background-position-x:10px;
+  background-position-y:center;
+  background-size:25px 25px;
+  cursor:pointer;
+}
+
+
+.google-btn:hover {
+  background-color: #efeded;
+}

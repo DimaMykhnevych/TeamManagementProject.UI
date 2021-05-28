@@ -25,7 +25,11 @@ export class PollsService {
       return this.http.delete(environment.apiRoutes.polls.delete + `?id=${pollId}`, { withCredentials: true })
     }
 
-    public put(pollId){
-      return this.http.delete(environment.apiRoutes.polls.put + `?id=${pollId}`, { withCredentials: true })
+    public put(poll){
+      return this.http.put(environment.apiRoutes.polls.put, poll, { withCredentials: true })
+    }
+
+    public getById(pollId){
+      return this.http.get(environment.apiRoutes.polls.getById + `?id=${pollId}`, { withCredentials: true })
     }
 }

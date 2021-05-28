@@ -39,7 +39,8 @@ export const environment = {
       get: `${API_BASE_URL}/polls`,
       makeVote: `${API_BASE_URL}/polls/make-vote`,
       delete: `${API_BASE_URL}/polls`,
-      put: `${API_BASE_URL}/polls`
+      put: `${API_BASE_URL}/polls`,
+      getById: `${API_BASE_URL}/polls/getById`
     },
     companies: {
       post: `${API_BASE_URL}/companies`,
@@ -55,6 +56,7 @@ export const environment = {
       post: `${API_BASE_URL}/events`,
       get: `${API_BASE_URL}/events`,
       changeAttending: `${API_BASE_URL}/events/changeAttending`,
+      delete: `${API_BASE_URL}/events`
     },
     report: {
       post: `${API_BASE_URL}/reports`,
