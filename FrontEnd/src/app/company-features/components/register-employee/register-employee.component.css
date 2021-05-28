@@ -16,4 +16,22 @@
   padding: 15px;
   background-color: azure;
   border-radius: 10px;
+  
+}
+@media all and(max-width:407px) {
+  .mat-form-field{
+    width: 250px;
+  }
+}
+mat-form-field{
+  width: 327px;
+}
+@media all and(max-width:270px){
+  .container{
+    width: 100%;
+  }
+}
+button:hover{
+  box-shadow: 2px 2px 7px 2px #232c5e;
+  transform: translateY(2px);
 }

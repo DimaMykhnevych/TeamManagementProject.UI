@@ -37,121 +37,131 @@
   <div class="container main mb-4">
     <h2 class="text-center main-heading p-3">Register your company now!</h2>
     <div class="row d-flex justify-content-center">
-      <div class="col-lg-6 form-wrapper d-flex justify-content-center py-3">
+      <div class="col-lg-12 form-wrapper d-flex justify-content-center py-3">
         <form [formGroup]="form" (submit)="onSubmit()">
-          <div>
-            <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Company Name</mat-label>
-              <input formControlName="name" matInput required />
-              <mat-error *ngIf="name?.touched && name?.invalid">
-                <div *ngIf="name?.errors?.required">This field is required</div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-atlas p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Company Domain</mat-label>
-              <input formControlName="domain" matInput required />
-              <mat-error *ngIf="domain?.touched && domain?.invalid">
-                <div *ngIf="domain?.errors?.required">
-                  This field is required
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-map-marker-alt p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Address of main office</mat-label>
-              <input formControlName="address" matInput required />
-              <mat-error *ngIf="address?.touched && address?.invalid">
-                <div *ngIf="address?.errors?.required">
-                  This field is required
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-phone p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Contact phone</mat-label>
-              <input formControlName="phone" matInput required />
-              <mat-error *ngIf="phone?.touched && phone?.invalid">
-                <div *ngIf="phone?.errors?.required">
-                  This field is required
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-envelope-open p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Contact email</mat-label>
-              <input
-                type="email"
-                formControlName="ceoEmail"
-                matInput
-                required
-              />
-              <mat-error *ngIf="ceoEmail?.touched && ceoEmail?.invalid">
-                <div *ngIf="ceoEmail?.errors?.required">
-                  This field is required
-                </div>
-                <div *ngIf="email?.errors?.pattern">
-                  Email is typed incorrect!
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>CEO First Name</mat-label>
-              <input formControlName="firstName" matInput required />
-              <mat-error *ngIf="firstName?.touched && firstName?.invalid">
-                <div *ngIf="firstName?.errors?.required">
-                  This field is required
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-            <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>CEO Last Name</mat-label>
-              <input formControlName="lastName" matInput required />
-              <mat-error *ngIf="lastName?.touched && lastName?.invalid">
-                <div *ngIf="lastName?.errors?.required">
-                  This field is required
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div class="mb-5">
-            <i style="font-size: 30px" class="fas fa-key p-3"></i>
-            <mat-form-field appearance="fill" [style.width.px]="327">
-              <mat-label>Password</mat-label>
-              <input
-                type="password"
-                formControlName="ceoPassword"
-                matInput
-                required
-              />
-              <mat-error *ngIf="ceoPassword?.touched && ceoPassword?.invalid">
-                <div *ngIf="ceoPassword?.errors?.required">
-                  This field is required
-                </div>
-                <div *ngIf="ceoPassword?.errors?.pattern">
-                  Password must contain minimum seven characters, at least one
-                  uppercase letter, one lowercase letter, one number and one
-                  special character
-                </div>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
+
+         <div class="flexWraper">
+           <div class="firstSection">
+            <div>
+              <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Company Name</mat-label>
+                <input formControlName="name" matInput required />
+                <mat-error *ngIf="name?.touched && name?.invalid">
+                  <div *ngIf="name?.errors?.required">This field is required</div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <i style="font-size: 30px" class="fas fa-atlas p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Company Domain</mat-label>
+                <input formControlName="domain" matInput required />
+                <mat-error *ngIf="domain?.touched && domain?.invalid">
+                  <div *ngIf="domain?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <i style="font-size: 30px" class="fas fa-map-marker-alt p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Address of main office</mat-label>
+                <input formControlName="address" matInput required />
+                <mat-error *ngIf="address?.touched && address?.invalid">
+                  <div *ngIf="address?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <i style="font-size: 30px" class="fas fa-phone p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Contact phone</mat-label>
+                <input formControlName="phone" matInput required />
+                <mat-error *ngIf="phone?.touched && phone?.invalid">
+                  <div *ngIf="phone?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+           </div>
+           <div class="secondSection">
+            <div>
+              <i style="font-size: 30px" class="fas fa-envelope-open p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Contact email</mat-label>
+                <input
+                  type="email"
+                  formControlName="ceoEmail"
+                  matInput
+                  required
+                />
+                <mat-error *ngIf="ceoEmail?.touched && ceoEmail?.invalid">
+                  <div *ngIf="ceoEmail?.errors?.required">
+                    This field is required
+                  </div>
+                  <div *ngIf="email?.errors?.pattern">
+                    Email is typed incorrect!
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>CEO First Name</mat-label>
+                <input formControlName="firstName" matInput required />
+                <mat-error *ngIf="firstName?.touched && firstName?.invalid">
+                  <div *ngIf="firstName?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <i style="font-size: 30px" class="fas fa-address-book p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>CEO Last Name</mat-label>
+                <input formControlName="lastName" matInput required />
+                <mat-error *ngIf="lastName?.touched && lastName?.invalid">
+                  <div *ngIf="lastName?.errors?.required">
+                    This field is required
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="mb-5">
+              <i style="font-size: 30px" class="fas fa-key p-3"></i>
+              <mat-form-field class="mat-form-field" appearance="fill" [style.width.px]="327">
+                <mat-label>Password</mat-label>
+                <input
+                  type="password"
+                  formControlName="ceoPassword"
+                  matInput
+                  required
+                />
+                <mat-error *ngIf="ceoPassword?.touched && ceoPassword?.invalid">
+                  <div *ngIf="ceoPassword?.errors?.required">
+                    This field is required
+                  </div>
+                  <div *ngIf="ceoPassword?.errors?.pattern">
+                    Password must contain minimum seven characters, at least one
+                    uppercase letter, one lowercase letter, one number and one
+                    special character
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+           </div>
+         </div>
+          
+          
+          
             <button
               type="submit"
               class="btn btn-block btn-success"
@@ -163,7 +173,9 @@
               >
                 <mat-spinner [diameter]="30"></mat-spinner>
               </div>
-              <div *ngIf="!isCompanyAdding">Pay for subscription</div>
+              <div *ngIf="!isCompanyAdding"><svg style="margin-bottom: 2px; margin-right: 10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z"/>
+              </svg>Pay for subscription</div>
             </button>
           </div>
         </form>
