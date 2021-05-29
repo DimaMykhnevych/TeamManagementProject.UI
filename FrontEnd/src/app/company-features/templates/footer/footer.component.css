@@ -1,15 +1,23 @@
 .footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
   bottom: 0;
-  margin-top: 100px;
+  margin-top: 200px;
   width: 100%;
   left: 0;
   text-align: center;
- 
+
 }
-@media all and(max-width:1200px){
+@media all and (max-width: 1000px){
   .footer{
-    margin-top: 0px;
+    margin-top: 100px;
   }
+
 }
+/* @media screen and (min-device-width: 280px){
+  .footer{
+    margin-top: 20px;
+    position: relative;
+  }
+
+} */
 
