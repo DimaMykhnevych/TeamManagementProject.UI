@@ -125,3 +125,10 @@ a {
 .card {
   background-color: rgba(240, 248, 255, 0.808);
 }
+@media screen and (min-device-width: 280px){
+  .card{
+    width: auto;
+    margin-right: 20px;
+  }
+}
+

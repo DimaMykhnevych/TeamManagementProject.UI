@@ -18,3 +18,11 @@
   background-color: azure;
   border-radius: 10px;
 }
+.footer{
+  background: linear-gradient(180deg, #505250, #8e8f91);
+  bottom: 0;
+  margin-top: 300px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}

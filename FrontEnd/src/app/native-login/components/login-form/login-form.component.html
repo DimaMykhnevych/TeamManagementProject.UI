@@ -46,18 +46,26 @@
       Email or password is invalid
     </div>
   </div>
-  <form action="{{loginUrl}}" method="post" #logingoogleform>
-    <a class="google-btn" (click)="googlesubmit()">Sign in with Google</a>
-  </form>
-  <div class="row">
-    <div class="col-6">
-      <button
-        type="submit"
-        class="btn btn-primary px-4"
-        [disabled]="this.form.invalid"
-      >
-        Login
-      </button>
+
+  <div class="container">
+    <div class="section1">
+      <button 
+      
+      type="submit"
+      class="btn btn-primary px-4 login"
+      [disabled]="this.form.invalid"
+    >
+      Login
+    </button>
+    </div>
+    <div class="section2">
+      <div class="row">
+        <div >
+          <form action="{{loginUrl}}" method="post" #logingoogleform>
+            <a class="google-btn" (click)="googlesubmit()" >Sign in with Google</a>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </form>
