@@ -14,15 +14,15 @@
         </p>
         <div class="line"></div>
       </div>
-      <div class="form-wrapper w-100">
-        <form
+      <div class="form-wrapper w-100 ">
+        <form class="mat"
           [formGroup]="form"
           #formDirective="ngForm"
           (submit)="onSubmit(formDirective)"
         >
-          <div class="row d-flex justify-content-center m-2">
-            <div class="col-lg-5">
-              <mat-form-field [style.width.px]="327">
+          <div class="container">
+            <div class="firstSection">
+              <mat-form-field>
                 <mat-label>Select Project</mat-label>
                 <input
                   type="text"
@@ -51,8 +51,8 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="col-lg-5">
-              <mat-form-field [style.width.px]="327">
+            <div class="secondSection">
+              <mat-form-field >
                 <mat-label>Select Team</mat-label>
                 <input
                   type="text"
