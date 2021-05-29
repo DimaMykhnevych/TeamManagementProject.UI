@@ -26,6 +26,9 @@ import { ProjectCreationComponent } from './company-features/components/project-
 import { CreateTeamComponent } from './company-features/components/create-team/create-team.component';
 import { DistributeProjectsComponent } from './company-features/components/distribute-projects/distribute-projects.component';
 import { EditPollComponent } from './edit-poll/edit-poll.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
+import { ChooseEditTeamComponent } from './choose-edit-team/choose-edit-team.component';
+
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
   { path: 'company-registration', component: CompanyRegistrationPageComponent },
@@ -59,6 +62,16 @@ const routes: Routes = [
       {
         path: 'distribute-projects',
         component: DistributeProjectsComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'edit-team',
+        component: EditTeamComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'choose-edit-team',
+        component: ChooseEditTeamComponent,
         canActivate: [AuthGuard],
       },
     ],

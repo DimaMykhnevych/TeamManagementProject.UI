@@ -73,6 +73,7 @@ export const environment = {
     team: {
       post: `${API_BASE_URL}/team`,
       get: `${API_BASE_URL}/team`,
+      getById: `${API_BASE_URL}/team/getById`
     },
     teamProject: {
       post: `${API_BASE_URL}/teamProject`,

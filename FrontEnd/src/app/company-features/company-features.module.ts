@@ -13,6 +13,7 @@ import { ProjectService } from './services/project.service';
 import { FooterComponent } from './templates/footer/footer.component';
 import { TeamService } from './services/team.service';
 import { TeamProjectService } from './services/team-project.service';
+import { EditTeamComponent } from '../edit-team/edit-team.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TeamProjectService } from './services/team-project.service';
     CreateTeamComponent,
     DistributeProjectsComponent,
     FooterComponent,
+    EditTeamComponent
   ],
   imports: [
     CommonModule,

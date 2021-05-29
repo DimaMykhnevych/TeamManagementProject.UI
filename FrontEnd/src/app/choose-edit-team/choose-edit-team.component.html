@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-12 mb-2">
+        <h2 class="text-center">Edit Team</h2>
+      </div>
+      <div class="col-lg-12">
+        <div class="line"></div>
+        <p class="description text-center m-4">
+          Choose a team to edit
+        </p>
+        <div class="line"></div>
+        <div class="flex">
+        <mat-form-field class="selectt" appearance="fill">
+          <mat-label>Choose the team</mat-label>
+          <mat-select [(ngModel)]="chosedTeam">
+            <mat-option *ngFor="let team of teams" [value]="team.id">
+              {{team.teamName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div class="flex">
+          <button
+          mat-raised-button
+          color="primary"
+          style="display: block;"
+          [disabled]="chosedTeam == null"
+          (click)="choose()"
+        >
+          <div>Choose</div>
+        </button>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>

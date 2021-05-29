@@ -60,6 +60,8 @@ import { CookieModule } from 'ngx-cookie';
 import { CreateReportComponent } from './create-report/create-report.component';
 import { ViewReportsComponent } from './view-reports/view-reports.component';
 import { EditPollComponent } from './edit-poll/edit-poll.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
+import { ChooseEditTeamComponent } from './choose-edit-team/choose-edit-team.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { EditPollComponent } from './edit-poll/edit-poll.component';
     CreateReportComponent,
     ViewReportsComponent,
     EditPollComponent,
+    ChooseEditTeamComponent,
   ],
   imports: [
     BrowserModule,
