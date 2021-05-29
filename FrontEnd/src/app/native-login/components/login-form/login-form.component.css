@@ -1,11 +1,9 @@
 .google-btn {
-  width: 210px;
   height: 40px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px auto 0 auto;
   font-size: 16px;
   color: #383838;
   font-weight: 500;
@@ -17,9 +15,45 @@
   background-position-y:center;
   background-size:25px 25px;
   cursor:pointer;
+  margin-top: 15px;
+  width: 250px;
 }
-
-
+.login{
+  width: 250px;
+}
+.login:hover{
+  box-shadow: 2px 2px 7px 2px #232c5e;
+  transform: translateY(2px);
+  background-color: #007bff;
+  color: #007bff;
+  background-color: rgb(212, 211, 211);
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
 .google-btn:hover {
   background-color: #efeded;
+  transform: translateY(2px);
+  transition-duration: 0.3s;
 }
+.container{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+}
+@media all and (max-width:400px){
+  .container{
+    margin-left:-15px ;
+  }
+  .google-btn{
+    text-align: center;
+    font-size: smaller;
+    width: 140px;
+  }
+  .login{
+    width: 140px;
+  }
+}
+
+
