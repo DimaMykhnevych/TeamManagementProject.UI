@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="container">
+  <div class="container"> 
     <div class="row mb-4">
       <div class="col-lg-12 mb-2">
         <h2 class="text-center">Here you can create teams</h2>
@@ -18,10 +18,10 @@
           #formDirective="ngForm"
           (submit)="onSubmit(formDirective)"
         >
-          <div class="row d-flex justify-content-center m-2">
-            <div class="col-lg-6">
+          <div class="row d-flex justify-content-center m-2 container">
+            <div class=" firstSection" >
               <div>
-                <mat-form-field appearance="fill" [style.width.px]="327">
+                <mat-form-field appearance="fill" >
                   <mat-label>Team Name</mat-label>
                   <input formControlName="teamName" matInput required />
                   <mat-error *ngIf="teamName?.touched && teamName?.invalid">
@@ -32,7 +32,7 @@
                 </mat-form-field>
               </div>
               <div>
-                <mat-form-field [style.width.px]="327">
+                <mat-form-field >
                   <mat-label>Employee email</mat-label>
                   <input
                     type="text"
@@ -57,10 +57,10 @@
                 </mat-form-field>
               </div>
             </div>
-            <div class="col-lg-4">
-              <h4>Added employees</h4>
+            <div class=" secondSection">
+              <h4 style="text-align: center;">Added employees</h4>
               <div *ngIf="selectedEmplyees.length !== 0">
-                <div class="row employee-area">
+                <div class="row employee-area" style="width: 70%; height: auto; margin-left: auto; margin-right: auto;">
                   <div
                     class="col-lg-5 employee-circle d-flex flex-row"
                     *ngFor="let employee of selectedEmplyees"
@@ -78,9 +78,9 @@
               </div>
             </div>
           </div>
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center thirdSection">
             <div class="col-lg-12 d-flex justify-content-center">
-              <button
+              <button class="button1"
                 [disabled]="
                   form.invalid || selectedEmplyees.length === 0 || isTeamAdding
                 "
@@ -100,4 +100,11 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<div class="footer" style="width: 100%">
+  <footer class="page-footer font-small unique-color-dark">
+    <div class="footer-copyright text-center py-3">
+      © 2021
+      <a> Team Management</a>
+    </div>
+  </footer>
+</div>

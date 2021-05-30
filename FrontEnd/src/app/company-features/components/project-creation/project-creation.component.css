@@ -2,30 +2,25 @@
   padding-top: 100px;
 
 }
-
 .line {
   background-color: black;
   width: auto;
   height: 3px;
-
 }
 .description {
   font-size: 1.3em;
   font-family: "Noto Sans JP", sans-serif;
 }
-
 .form-wrapper {
   margin: 10px;
   padding: 15px;
   background-color: azure;
   border-radius: 10px;
 }
-
 .textArea {
   background-color: rgb(207, 239, 243);
   border-radius: 5px;
 }
-
 .blockCenter-second{
   margin-top: -20px;
 }
@@ -35,15 +30,11 @@
     margin-right: 20px;
   }
 }
-
 @media screen and (min-width: 540px){
   .mat{
     width: 100%;
   }
-
-  
 }
-
 @media screen and (min-width: 250px){
   .blockCenter{
    text-align: center;
@@ -51,7 +42,41 @@
   .mat{
     width: 100%;
   }
-  
-  
 }
-
+button:hover{
+  box-shadow: 2px 2px 7px 2px #232c5e;
+  transform: translateY(2px);
+}
+.footer {
+  background: linear-gradient(180deg, #505250, #8e8f91);
+  bottom: 0;
+  margin-top: 165px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+@media all and (max-width: 1200px)and (min-width:992px){
+  .footer{
+margin-top: 165px;
+  }
+}
+@media all and (max-width: 992px)and (min-width:768px){
+  .footer{
+margin-top: 100px;
+  }
+}
+@media all and (max-width: 768px)and (min-width:540px){
+  .footer{
+margin-top: 80px;
+  }
+}
+@media all and (max-width: 540px)and (min-width:327px){
+  .footer{
+margin-top: 70px;
+  }
+}
+@media all and (max-width: 327px)and (min-width:200px){
+  .footer{
+margin-top: 50px;
+  }
+}
