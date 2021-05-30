@@ -1,28 +1,17 @@
-<div class="main">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-12 mb-2">
-        <h2 class="text-center">Here you can create projects</h2>
-      </div>
+<h1 mat-dialog-title>Updating {{ project.name }}</h1>
+<div class="content" mat-dialog-content>
+  <div>
+    <div class="row">
       <div class="col-lg-12">
-        <div class="line" style="width: auto"></div>
-        <p class="description text-center m-4">
-          Here you can create projects to assign them to the teams. Fill the
-          form below to create project
-        </p>
-        <div class="line"></div>
-      </div>
-
-      <div class="form-wrapper w-100">
-        <form
-          [formGroup]="form"
-          #formDirective="ngForm"
-          (submit)="onSubmit(formDirective)"
-        >
-          <div class="row d-flex justify-content-center">
+        <form [formGroup]="form" (submit)="onSubmit()">
+          <div class="row d-flex justify-content-around">
             <div class="col-lg-6 blockCenter">
               <div>
-                <mat-form-field appearance="fill" class="mat">
+                <mat-form-field
+                  appearance="fill"
+                  class="mat"
+                  [style.width.px]="245"
+                >
                   <mat-label>Project Name</mat-label>
                   <input formControlName="name" matInput required />
                   <mat-error *ngIf="name?.touched && name?.invalid">
@@ -77,7 +66,16 @@
                 </mat-form-field>
               </div>
             </div>
-            <div class="col-lg-6 blockCenter blockCenter-second">
+            <div
+              class="
+                col-lg-6
+                d-flex
+                justify-content-center
+                align-items-center
+                flex-column
+                blockCenter blockCenter-second
+              "
+            >
               <div>
                 <mat-form-field class="mat">
                   <mat-label>Project Description</mat-label>
@@ -115,7 +113,7 @@
                   >
                     <mat-spinner [diameter]="30"></mat-spinner>
                   </div>
-                  <div *ngIf="!isProjectAdding">Create Project</div>
+                  <div *ngIf="!isProjectAdding">Update Project</div>
                 </button>
               </div>
             </div>
@@ -124,12 +122,4 @@
       </div>
     </div>
   </div>
-</div>
-<div class="footer" style="width: 100%">
-  <footer class="page-footer font-small unique-color-dark">
-    <div class="footer-copyright text-center py-3">
-      © 2021
-      <a> Team Management</a>
-    </div>
-  </footer>
 </div>

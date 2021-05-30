@@ -26,4 +26,28 @@ export class EmployeeService {
       withCredentials: true,
     });
   }
+
+  public getAllEmployees(): Observable<UserModel[]> {
+    return this._http.get<UserModel[]>(
+      environment.apiRoutes.employee.allEmployees,
+      {
+        withCredentials: true,
+      }
+    );
+  }
+
+  public updateEmployee(employee: UserModel): Observable<UserModel> {
+    return this._http.put<UserModel>(
+      environment.apiRoutes.employee.update,
+      employee,
+      { withCredentials: true }
+    );
+  }
+
+  public deleteEmployee(id: string): Observable<boolean> {
+    return this._http.delete<boolean>(
+      `${environment.apiRoutes.employee.delete}/${id}`,
+      { withCredentials: true }
+    );
+  }
 }

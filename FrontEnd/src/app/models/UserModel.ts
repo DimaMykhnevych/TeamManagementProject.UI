@@ -6,4 +6,6 @@ export class UserModel {
   public username: string;
   public firstName: string;
   public lastName: string;
+  public position: string;
+  public dateOfBirth: Date;
 }

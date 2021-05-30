@@ -1,0 +1,44 @@
+<div class="main container">
+  <h2 class="text-center">Added Employees</h2>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table">
+        <thead>
+          <tr class="table-secondary">
+            <th>Employee name</th>
+            <th>Employee email</th>
+            <th>Employee position</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee?.firstName }} {{ employee?.lastName }}</td>
+            <td>{{ employee?.email }}</td>
+            <td>{{ employee?.position }}</td>
+            <td>
+              <button
+                (click)="onEditButtonClick(employee?.id)"
+                type="button"
+                class="btn btn-warning m-0"
+              >
+                Edit
+              </button>
+            </td>
+            <td>
+              <button
+                (click)="onDeleteButtonClick(employee?.id)"
+                type="button"
+                class="btn btn-danger m-0"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
