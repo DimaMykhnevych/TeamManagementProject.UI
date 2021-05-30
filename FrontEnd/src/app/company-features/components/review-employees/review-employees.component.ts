@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
-import { mergeMap, switchMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { filter, mergeMap, switchMap } from 'rxjs/operators';
 import { UserModel } from 'src/app/models/UserModel';
 import { DialogService } from '../../services/dialog.service';
 import { EmployeeService } from '../../services/employee.service';
@@ -36,18 +36,55 @@ export class ReviewEmployeesComponent implements OnInit {
       .afterClosed()
       .pipe(
         switchMap((updatedEmployee) => {
-          updatedEmployee.id = id;
-          return this.updateEmployee(updatedEmployee);
+          if (updatedEmployee) {
+            updatedEmployee.id = id;
+            return this.updateEmployee(updatedEmployee);
+          }
+          return of(null);
         })
       )
       .subscribe((resp) => {
-        this.employees = resp;
-        this._toastr.success('Employee was updated successfully');
+        if (resp) {
+          this.employees = resp;
+          this._toastr.success('Employee was updated successfully');
+        }
       });
   }
 
   public updateEmployee(employee: UserModel): Observable<UserModel[]> {
     return this._employeeService.updateEmployee(employee).pipe(
+      switchMap(() => {
+        return this.getEmployees();
+      })
+    );
+  }
+
+  public onDeleteButtonClick(id: string): void {
+    const employee = this.employees.find((e) => e.id === id);
+    this._dialogService
+      .openConfirmDialog({
+        title: 'Removing Employee',
+        content: `Do you really want to remove ${employee.firstName} ${employee.lastName} 
+      (${employee.email}) from your company`,
+      })
+      .afterClosed()
+      .pipe(
+        switchMap((resp) => {
+          if (resp === 'yes') {
+            return this.deleteEmployee(employee.id);
+          }
+          return of(null);
+        })
+      )
+      .subscribe((resp) => {
+        if (resp) {
+          this.employees = resp;
+          this._toastr.success('Employee was deleted successfully');
+        }
+      });
+  }
+  private deleteEmployee(id: string): Observable<UserModel[]> {
+    return this._employeeService.deleteEmployee(id).pipe(
       switchMap(() => {
         return this.getEmployees();
       })

@@ -43,4 +43,11 @@ export class EmployeeService {
       { withCredentials: true }
     );
   }
+
+  public deleteEmployee(id: string): Observable<boolean> {
+    return this._http.delete<boolean>(
+      `${environment.apiRoutes.employee.delete}/${id}`,
+      { withCredentials: true }
+    );
+  }
 }

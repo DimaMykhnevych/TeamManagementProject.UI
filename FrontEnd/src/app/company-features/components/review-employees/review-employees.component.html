@@ -27,7 +27,13 @@
               </button>
             </td>
             <td>
-              <button type="button" class="btn btn-danger m-0">Delete</button>
+              <button
+                (click)="onDeleteButtonClick(employee?.id)"
+                type="button"
+                class="btn btn-danger m-0"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         </tbody>

@@ -17,6 +17,7 @@ import { EditTeamComponent } from '../edit-team/edit-team.component';
 import { ReviewEmployeesComponent } from './components/review-employees/review-employees.component';
 import { UpdateEmployeeDialogComponent } from './dialogs/update-employee-dialog/update-employee-dialog.component';
 import { DialogService } from './services/dialog.service';
+import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DialogService } from './services/dialog.service';
     EditTeamComponent,
     ReviewEmployeesComponent,
     UpdateEmployeeDialogComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     CommonModule,
