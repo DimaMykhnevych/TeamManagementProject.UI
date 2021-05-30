@@ -7,6 +7,7 @@
   width: 100%;
   height: 3px;
 }
+
 .description {
   font-size: 1.3em;
   font-family: "Noto Sans JP", sans-serif;
@@ -31,4 +32,235 @@
   padding: 6px;
   border-radius: 10px;
   font-size: 13px;
+}
+
+.footer {
+  background: linear-gradient(180deg, #505250, #8e8f91);
+  bottom: 0;
+  margin-top: 215px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+@media all and (max-width: 1920px)and (min-width:1200px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer {
+    margin-top: 190px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 50%;
+  }
+  .secondSection {
+    margin-bottom: 100px;
+    width: 50%;
+  }
+}
+@media (max-width: 1200px)and (min-width:992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 45px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 992px)and (min-width:768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 80px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 768px)and (min-width:574px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 50px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+  }
+
+}
+@media (max-width: 574px)and (min-width:540px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 55px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+  }
+
+}
+@media (max-width: 540px)and (min-width:455px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 45px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 455px)and (min-width:337px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 20px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+  }
+
+}
+@media (max-width: 337px)and (min-width:270px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 45px;
+  }
+  mat-form-field {
+    width: 70%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .thirdSection {
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 5px;
+  }
+  .form-wrapper{
+    margin-left: -20px;
+  }
+}
+.button1:hover{
+  box-shadow: 2px 2px 7px 2px #232c5e;
+  transform: translateY(2px);
 }

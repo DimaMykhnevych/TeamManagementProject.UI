@@ -18,13 +18,17 @@
   border-radius: 10px;
   
 }
-@media all and(max-width:407px) {
-  .mat-form-field{
-    width: 250px;
-  }
+@media screen and (max-width: 337px)and (min-width:327px){
+.wrap{
+  margin-left: 45px;
+  margin-top: -80px;
+}
+}
+.container{
+  text-align: center;
 }
 mat-form-field{
-  width: 327px;
+  width: auto;
 }
 @media all and(max-width:270px){
   .container{
@@ -34,5 +38,13 @@ mat-form-field{
 button:hover{
   box-shadow: 2px 2px 7px 2px #232c5e;
   transform: translateY(2px);
+}
+.footer{
+  background: linear-gradient(180deg, #505250, #8e8f91);
+  bottom: 0;
+  margin-top: 80px;
+  width: 100%;
+  left: 0;
+  text-align: center;
 }
 
