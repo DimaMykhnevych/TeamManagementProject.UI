@@ -44,4 +44,11 @@ export class ProjectService {
       { withCredentials: true }
     );
   }
+
+  public deleteProject(id: string): Observable<boolean> {
+    return this._http.delete<boolean>(
+      `${environment.apiRoutes.project.delete}/${id}`,
+      { withCredentials: true }
+    );
+  }
 }

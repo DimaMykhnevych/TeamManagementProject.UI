@@ -54,6 +54,30 @@ export class ReviewProjectsComponent implements OnInit {
       });
   }
 
+  public onDeleteButtonClick(id: string): void {
+    const project = this.projects.find((e) => e.id === id);
+    this._dialogService
+      .openConfirmDialog({
+        title: 'Removing Employee',
+        content: `Do you really want to remove ${project.name} from your company`,
+      })
+      .afterClosed()
+      .pipe(
+        switchMap((resp) => {
+          if (resp === 'yes') {
+            return this.deleteProject(project.id);
+          }
+          return of(null);
+        })
+      )
+      .subscribe((resp) => {
+        if (resp) {
+          this.projects = resp;
+          this._toastr.success('Paroject was deleted successfully');
+        }
+      });
+  }
+
   public updateProject(project: ProjectUpdateModel): Observable<Project[]> {
     return this._projectService.updateProject(project).pipe(
       switchMap(() => {
@@ -62,7 +86,13 @@ export class ReviewProjectsComponent implements OnInit {
     );
   }
 
-  public onDeleteButtonClick(id: string): void {}
+  private deleteProject(id: string): Observable<Project[]> {
+    return this._projectService.deleteProject(id).pipe(
+      switchMap(() => {
+        return this.getProjects();
+      })
+    );
+  }
 
   public getProjects(): Observable<Project[]> {
     return this._projectService.getAllProjects();

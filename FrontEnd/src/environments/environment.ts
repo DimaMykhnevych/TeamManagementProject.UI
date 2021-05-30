@@ -74,6 +74,7 @@ export const environment = {
       get: `${API_BASE_URL}/project`,
       allProjects: `${API_BASE_URL}/project/all-projects`,
       update: `${API_BASE_URL}/project`,
+      delete: `${API_BASE_URL}/project`,
     },
     team: {
       post: `${API_BASE_URL}/team`,
