@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -12,7 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-edit-team',
   templateUrl: './edit-team.component.html',
-  styleUrls: ['./edit-team.component.css']
+  styleUrls: ['./edit-team.component.css'],
 })
 export class EditTeamComponent implements OnInit {
   public form: FormGroup;
@@ -35,10 +41,10 @@ export class EditTeamComponent implements OnInit {
     this.initializeForm();
     this.getEmployees();
     let id = this.activatedRoute.snapshot.queryParams['id'];
-    this._teamService.getById(id).subscribe((team: Team)=>{
+    this._teamService.getById(id).subscribe((team: Team) => {
       this.team = team;
       this.selectedEmplyees = team.members;
-      this.form.reset({teamName : this.team.teamName})
+      this.form.reset({ teamName: this.team.teamName });
     });
   }
 
@@ -104,10 +110,10 @@ export class EditTeamComponent implements OnInit {
     this._teamService.update(team).subscribe((resp) => {
       if (resp) {
         this.isTeamAdding = false;
-        this._toastr.success('Team was update successfully!');
+        this._toastr.success('Team was updated successfully!');
         this.clearFields(formDirective);
         this.selectedEmplyees = [];
-        this.router.navigateByUrl("/company-features");
+        this.router.navigateByUrl('/company-features');
       }
     });
   }
@@ -116,5 +122,4 @@ export class EditTeamComponent implements OnInit {
     formDirective.resetForm();
     this.form.reset();
   }
-
 }

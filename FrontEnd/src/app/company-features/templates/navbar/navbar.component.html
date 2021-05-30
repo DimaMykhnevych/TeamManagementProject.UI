@@ -11,29 +11,55 @@
   ></button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
+      <li class="nav-item dropdown" routerLinkActive="active current">
         <a
-          class="nav-link"
-          routerLink="register-employee"
-          routerLinkActive="active current"
-          >Register employee</a
+          class="nav-link dropdown-toggle"
+          id="employeeDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Employee Management</a
         >
+        <div class="dropdown-menu" aria-labelledby="employeeDropdown">
+          <a class="dropdown-item" routerLink="register-employee"
+            >Register Employee</a
+          >
+          <a class="dropdown-item" routerLink="choose-edit-team"
+            >Edit Employee</a
+          >
+        </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown" routerLinkActive="active current">
         <a
-          class="nav-link"
-          routerLink="create-project"
-          routerLinkActive="active current"
-          >Create Project</a
+          class="nav-link dropdown-toggle"
+          id="projectDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Project Management</a
         >
+        <div class="dropdown-menu" aria-labelledby="projectDropdown">
+          <a class="dropdown-item" routerLink="create-project"
+            >Create Project</a
+          >
+          <a class="dropdown-item" routerLink="choose-edit-team"
+            >Edit Project</a
+          >
+        </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown" routerLinkActive="active current">
         <a
-          class="nav-link"
-          routerLink="create-team"
-          routerLinkActive="active current"
-          >Create Team</a
+          class="nav-link dropdown-toggle"
+          id="teamDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Team Management</a
         >
+        <div class="dropdown-menu" aria-labelledby="teamDropdown">
+          <a class="dropdown-item" routerLink="create-team">Create Team</a>
+          <a class="dropdown-item" routerLink="choose-edit-team">Edit Team</a>
+        </div>
       </li>
       <li class="nav-item">
         <a
@@ -41,14 +67,6 @@
           routerLink="distribute-projects"
           routerLinkActive="active current"
           >Distribute projects</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link abc"
-          routerLink="choose-edit-team"
-          routerLinkActive="active current"
-          >Edit Team</a
         >
       </li>
     </ul>

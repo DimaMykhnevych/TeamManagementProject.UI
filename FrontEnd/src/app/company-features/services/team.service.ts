@@ -23,13 +23,16 @@ export class TeamService {
   }
 
   public getById(id: string): Observable<Team> {
-    return this._http.get<Team>(environment.apiRoutes.team.getById + "?id=" + id, {
-      withCredentials: true,
-    });
+    return this._http.get<Team>(
+      environment.apiRoutes.team.getById + '?id=' + id,
+      {
+        withCredentials: true,
+      }
+    );
   }
 
-  public update(team: Team){
-    return this._http.put(environment.apiRoutes.team.post, team, {
+  public update(team: Team): Observable<Team> {
+    return this._http.put<Team>(environment.apiRoutes.team.post, team, {
       withCredentials: true,
     });
   }
