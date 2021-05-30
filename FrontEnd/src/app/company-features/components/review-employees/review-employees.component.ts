@@ -32,7 +32,7 @@ export class ReviewEmployeesComponent implements OnInit {
   public onEditButtonClick(id: string): void {
     const employee = this.employees.find((e) => e.id === id);
     this._dialogService
-      .openJourneyDetailsDialog(employee)
+      .openUpdateEmployeeDialog(employee)
       .afterClosed()
       .pipe(
         switchMap((updatedEmployee) => {

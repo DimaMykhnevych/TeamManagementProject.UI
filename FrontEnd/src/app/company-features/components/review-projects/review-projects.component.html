@@ -1,0 +1,43 @@
+<div class="main container">
+  <h2 class="text-center">Added Projects</h2>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table">
+        <thead>
+          <tr class="table-secondary">
+            <th>Project name</th>
+            <th>Project start date</th>
+            <th>Project end date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>{{ project?.name }}</td>
+            <td>{{ project?.startDate | date }}</td>
+            <td>{{ project?.endDate | date }}</td>
+            <td>
+              <button
+                (click)="onEditButtonClick(project?.id)"
+                type="button"
+                class="btn btn-warning m-0"
+              >
+                Edit
+              </button>
+            </td>
+            <td>
+              <button
+                (click)="onDeleteButtonClick(project?.id)"
+                type="button"
+                class="btn btn-danger m-0"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

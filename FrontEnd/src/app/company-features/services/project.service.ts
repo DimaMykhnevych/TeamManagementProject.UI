@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ProjectCreateModel } from '../../models/ProjectCreateModel';
 import { environment } from 'src/environments/environment';
 import { Project } from 'src/app/models/Project';
+import { ProjectUpdateModel } from '../../models/ProjectUpdateModel';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +26,22 @@ export class ProjectService {
     return this._http.get<Project[]>(environment.apiRoutes.project.get, {
       withCredentials: true,
     });
+  }
+
+  public getAllProjects(): Observable<Project[]> {
+    return this._http.get<Project[]>(
+      environment.apiRoutes.project.allProjects,
+      {
+        withCredentials: true,
+      }
+    );
+  }
+
+  public updateProject(project: ProjectUpdateModel): Observable<Project> {
+    return this._http.put<Project>(
+      environment.apiRoutes.project.update,
+      project,
+      { withCredentials: true }
+    );
   }
 }

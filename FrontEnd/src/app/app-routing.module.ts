@@ -30,6 +30,7 @@ import { EditPollComponent } from './edit-poll/edit-poll.component';
 import { EditTeamComponent } from './edit-team/edit-team.component';
 import { ChooseEditTeamComponent } from './choose-edit-team/choose-edit-team.component';
 import { ReviewEmployeesComponent } from './company-features/components/review-employees/review-employees.component';
+import { ReviewProjectsComponent } from './company-features/components/review-projects/review-projects.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
@@ -58,6 +59,11 @@ const routes: Routes = [
       {
         path: 'create-project',
         component: ProjectCreationComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'edit-projects',
+        component: ReviewProjectsComponent,
         canActivate: [AuthGuard],
       },
       {

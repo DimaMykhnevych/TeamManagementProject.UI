@@ -18,6 +18,8 @@ import { ReviewEmployeesComponent } from './components/review-employees/review-e
 import { UpdateEmployeeDialogComponent } from './dialogs/update-employee-dialog/update-employee-dialog.component';
 import { DialogService } from './services/dialog.service';
 import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
+import { ReviewProjectsComponent } from './components/review-projects/review-projects.component';
+import { UpdateProjectDialogComponent } from './dialogs/update-project-dialog/update-project-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confi
     ReviewEmployeesComponent,
     UpdateEmployeeDialogComponent,
     ConfirmationDialogComponent,
+    ReviewProjectsComponent,
+    UpdateProjectDialogComponent,
   ],
   imports: [
     CommonModule,
