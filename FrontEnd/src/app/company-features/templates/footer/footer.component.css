@@ -5,13 +5,11 @@
   width: 100%;
   left: 0;
   text-align: center;
-
 }
-@media all and (max-width: 1000px){
-  .footer{
+@media all and (max-width: 1000px) {
+  .footer {
     margin-top: 100px;
   }
-
 }
 /* @media screen and (min-device-width: 280px){
   .footer{
@@ -20,4 +18,3 @@
   }
 
 } */
-

@@ -18,7 +18,8 @@ import { SubscriptionPaymentComponent } from './company-registration/components/
 import { ViewEventsComponent } from './view-events/view-events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { CreateReportComponent } from './create-report/create-report.component';
-import { ViewReportsComponent } from './view-reports/view-reports.component';import { LoginComponent } from './native-login/components/login/login.component';
+import { ViewReportsComponent } from './view-reports/view-reports.component';
+import { LoginComponent } from './native-login/components/login/login.component';
 import { RegisterEmployeeComponent } from './company-features/components/register-employee/register-employee.component';
 import { NativeAuthGuard } from './auth/guards';
 import { NavbarComponent } from './company-features/templates/navbar/navbar.component';
@@ -28,6 +29,7 @@ import { DistributeProjectsComponent } from './company-features/components/distr
 import { EditPollComponent } from './edit-poll/edit-poll.component';
 import { EditTeamComponent } from './edit-team/edit-team.component';
 import { ChooseEditTeamComponent } from './choose-edit-team/choose-edit-team.component';
+import { ReviewEmployeesComponent } from './company-features/components/review-employees/review-employees.component';
 
 const routes: Routes = [
   { path: '', component: WelcomePageComponent },
@@ -48,6 +50,10 @@ const routes: Routes = [
         path: 'register-employee',
         component: RegisterEmployeeComponent,
         canActivate: [AuthGuard],
+      },
+      {
+        path: 'edit-employees',
+        component: ReviewEmployeesComponent,
       },
       {
         path: 'create-project',
@@ -138,7 +144,7 @@ const routes: Routes = [
         path: 'edit-poll',
         component: EditPollComponent,
         canActivate: [AuthGuard],
-      }
+      },
     ],
   },
   { path: '**', redirectTo: '' },
@@ -146,6 +152,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -40,7 +40,7 @@ export const environment = {
       makeVote: `${API_BASE_URL}/polls/make-vote`,
       delete: `${API_BASE_URL}/polls`,
       put: `${API_BASE_URL}/polls`,
-      getById: `${API_BASE_URL}/polls/getById`
+      getById: `${API_BASE_URL}/polls/getById`,
     },
     companies: {
       post: `${API_BASE_URL}/companies`,
@@ -56,7 +56,7 @@ export const environment = {
       post: `${API_BASE_URL}/events`,
       get: `${API_BASE_URL}/events`,
       changeAttending: `${API_BASE_URL}/events/changeAttending`,
-      delete: `${API_BASE_URL}/events`
+      delete: `${API_BASE_URL}/events`,
     },
     report: {
       post: `${API_BASE_URL}/reports`,
@@ -65,6 +65,8 @@ export const environment = {
     employee: {
       post: `${API_BASE_URL}/employee`,
       get: `${API_BASE_URL}/employee`,
+      allEmployees: `${API_BASE_URL}/employee/all-employees`,
+      update: `${API_BASE_URL}/employee`,
     },
     project: {
       post: `${API_BASE_URL}/project`,
@@ -73,7 +75,7 @@ export const environment = {
     team: {
       post: `${API_BASE_URL}/team`,
       get: `${API_BASE_URL}/team`,
-      getById: `${API_BASE_URL}/team/getById`
+      getById: `${API_BASE_URL}/team/getById`,
     },
     teamProject: {
       post: `${API_BASE_URL}/teamProject`,

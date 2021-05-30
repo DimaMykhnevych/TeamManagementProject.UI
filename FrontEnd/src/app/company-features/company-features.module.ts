@@ -14,6 +14,9 @@ import { FooterComponent } from './templates/footer/footer.component';
 import { TeamService } from './services/team.service';
 import { TeamProjectService } from './services/team-project.service';
 import { EditTeamComponent } from '../edit-team/edit-team.component';
+import { ReviewEmployeesComponent } from './components/review-employees/review-employees.component';
+import { UpdateEmployeeDialogComponent } from './dialogs/update-employee-dialog/update-employee-dialog.component';
+import { DialogService } from './services/dialog.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { EditTeamComponent } from '../edit-team/edit-team.component';
     CreateTeamComponent,
     DistributeProjectsComponent,
     FooterComponent,
-    EditTeamComponent
+    EditTeamComponent,
+    ReviewEmployeesComponent,
+    UpdateEmployeeDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +37,12 @@ import { EditTeamComponent } from '../edit-team/edit-team.component';
     FormsModule,
     MaterialModule,
   ],
-  providers: [EmployeeService, ProjectService, TeamService, TeamProjectService],
+  providers: [
+    EmployeeService,
+    ProjectService,
+    TeamService,
+    TeamProjectService,
+    DialogService,
+  ],
 })
 export class CompanyFeaturesModule {}
