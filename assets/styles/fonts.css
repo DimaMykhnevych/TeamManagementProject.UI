@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Helvetica-Neue;
+    src: url(../fonts/HelveticaNeueCyr-Light.woff);
+}
+@font-face{ 
+    font-family:Helvetica-Neue-Light;
+    src: url(../fonts/HelveticaNeueCyr-Thin.woff);
+}
+@font-face{
+    font-family:Helvetica-Neue-Medium;
+    src: url(../fonts/HelveticaNeueCyr-Medium.woff);
+}
