@@ -11,17 +11,17 @@ footer{
 }
 @media all and (max-width: 1920px)and (min-width:1200px){
   .footer{
-margin-top: 260px;
+margin-top: 280px;
   }
 }
 @media all and (max-width: 1200px)and (min-width:992px){
   .footer{
-margin-top: 260px;
+margin-top: 280px;
   }
 }
 @media all and (max-width: 992px)and (min-width:768px){
   .footer{
-margin-top: 260px;
+margin-top: 280px;
   }
 }
 @media all and (max-width: 768px)and (min-width:540px){
