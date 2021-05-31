@@ -1,10 +1,10 @@
 <div class="main">
-  <div class="container">
+  <div class="container" style="text-align: center;">
     <div class="row mb-4">
-      <div class="col-lg-12 mb-2">
+      <div class="col-lg-12 ">
         <h2 class="text-center">Here you can update teams</h2>
       </div>
-      <div class="col-lg-12">
+      <div class="col-lg-12" >
         <div class="line"></div>
         <h2 class="description text-center m-4">
           Here you can update teams with employees that were already registered.
@@ -18,7 +18,7 @@
           #formDirective="ngForm"
           (submit)="onSubmit(formDirective)"
         >
-          <div class="row d-flex justify-content-center m-2">
+          <div class="row d-flex justify-content-center m-2"style="text-align: center;">
             <div class="col-lg-6">
               <div>
                 <mat-form-field appearance="fill" [style.width.px]="327">
@@ -57,11 +57,11 @@
                 </mat-form-field>
               </div>
             </div>
-            <div class="col-lg-4">
-              <h4>Added employees</h4>
-              <div *ngIf="selectedEmplyees.length !== 0">
-                <div class="row employee-area">
-                  <div
+            <div class="col-lg-4 ">
+              <h4 class="heading">Added employees</h4>
+              <div *ngIf="selectedEmplyees.length !== 0" class="alignning">
+                <div class="row employee-area" >
+                  <div style="text-align: center;"
                     class="col-lg-5 employee-circle d-flex flex-row"
                     *ngFor="let employee of selectedEmplyees"
                   >
@@ -80,7 +80,7 @@
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-lg-12 d-flex justify-content-center">
-              <button
+              <button class="btn"
                 [disabled]="
                   form.invalid || selectedEmplyees.length === 0 || isTeamAdding
                 "
@@ -100,4 +100,11 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<div class="footer" style="width: 100%">
+  <footer class="page-footer font-small unique-color-dark">
+    <div class="footer-copyright text-center py-3">
+      © 2021
+      <a> Team Management</a>
+    </div>
+  </footer>
+</div>

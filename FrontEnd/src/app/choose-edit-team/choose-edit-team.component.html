@@ -1,8 +1,9 @@
 <div class="main">
   <div class="container">
     <div class="row mb-4">
-      <div class="col-lg-12 mb-2">
+      <div class="col-lg-12 mb-2" style="margin-top: 200px;">
         <h2 class="text-center">Edit Team</h2>
+        <hr>
       </div>
       <div class="col-lg-12">
         <div class="line"></div>
@@ -11,7 +12,7 @@
         </p>
         <div class="line"></div>
         <div class="flex">
-        <mat-form-field class="selectt" appearance="fill">
+        <mat-form-field class="selectt" appearance="fill" style="width: 100%;">
           <mat-label>Choose the team</mat-label>
           <mat-select [(ngModel)]="chosedTeam">
             <mat-option *ngFor="let team of teams" [value]="team.id">
@@ -34,4 +35,12 @@
       </div>
       </div>
       </div>
+      </div>
+      <div class="footer" style="width: 100%">
+        <footer class="page-footer font-small unique-color-dark">
+          <div class="footer-copyright text-center py-3">
+            © 2021
+            <a> Team Management</a>
+          </div>
+        </footer>
       </div>

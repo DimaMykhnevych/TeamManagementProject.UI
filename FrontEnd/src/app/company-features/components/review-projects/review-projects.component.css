@@ -1,3 +1,46 @@
 .main {
   padding-top: 100px;
 }
+.footer{
+  background: linear-gradient(180deg, #505250, #8e8f91);
+  bottom: 0;
+  margin-top: 300px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+@media all and (max-width: 1200px)and (min-width:992px){
+  .footer{
+margin-top: 300px;
+  }
+}
+@media all and (max-width: 992px)and (min-width:768px){
+  .footer{
+margin-top: 300px;
+  }
+}
+@media all and (max-width: 768px)and (min-width:540px){
+  .footer{
+margin-top: 150px;
+  }
+}
+@media all and (max-width: 540px)and (min-width:327px){
+  .footer{
+margin-top: 140px;
+  }
+}
+@media all and (max-width: 327px)and (min-width:200px){
+  .footer{
+margin-top: 140px;
+  }
+}
+@media all and(max-width:347px) {
+  .mat-form-field{
+  width: 100%;
+  }
+}
+button:hover{
+  box-shadow: 2px 2px 7px 2px #232c5e;
+  transform: translateY(2px);
+}
+

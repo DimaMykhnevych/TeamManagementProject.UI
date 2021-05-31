@@ -1,0 +1,82 @@
+.footer{
+    background: linear-gradient(180deg, #505250, #8e8f91);
+    bottom: 0;
+    margin-top: 330px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  @media all and (max-width: 1200px)and (min-width:992px){
+    .footer{
+  margin-top: 330px;
+    }
+  }
+  @media all and (max-width: 992px)and (min-width:768px){
+    .footer{
+  margin-top: 200px;
+    }
+    .alignning{
+        margin-top: 50px;
+        margin-left: 250px;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+    
+  }
+  @media all and (max-width: 768px)and (min-width:540px){
+    .footer{
+  margin-top: 230px;
+    }.alignning{
+        margin-top: 50px;
+        margin-left: 170px;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+  }
+  @media all and (max-width: 540px)and (min-width:327px){
+    .footer{
+  margin-top: 230px;
+    }
+    .alignning{
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+  }
+  @media all and (max-width: 327px)and (min-width:200px){
+    .footer{
+  margin-top: 230px;
+    }.alignning{
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+  }
+  
+  button:hover{
+    box-shadow: 2px 2px 7px 2px #232c5e;
+    transform: translateY(2px);
+  }
+  .fas{
+      margin-top: -10px;
+      margin-right: 10px;
+  }
+  
