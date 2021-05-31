@@ -70,6 +70,16 @@
         margin-top: 30px;
     }
   }
+  @media all and (max-height: 1080px)and (min-height:850px){
+    .footer{
+        margin-top: 230px;
+    }
+  }
+  @media all and (max-height: 850px)and (min-height:500){
+    .footer{
+        margin-top: 200px;
+    }
+  }
   
   button:hover{
     box-shadow: 2px 2px 7px 2px #232c5e;
