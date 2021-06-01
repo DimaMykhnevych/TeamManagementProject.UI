@@ -4958,23 +4958,27 @@ class NavbarComponent {
         this._userInfoService.loadUserInfo().subscribe((resp) => {
             if (resp) {
                 this.userInfo = resp;
-                if (resp.position != "CEO") {
+                if (resp.position != 'CEO') {
                     this._router.navigate(['/home']);
+                }
+                else {
+                    this._userInfoService.isAvailable().subscribe({
+                        next: () => { },
+                        error: (resp) => {
+                            if (resp.error != '') {
+                                this._router.navigateByUrl('/subscription-payment?companyId=' + resp.error);
+                            }
+                            else {
+                                this._router.navigate(['/home']);
+                            }
+                        },
+                    });
                 }
             }
             else {
                 this._router.navigate(['']);
             }
         });
-        this._userInfoService.isAvailable().subscribe({ next: () => {
-            }, error: (resp) => {
-                if (resp.error != "") {
-                    this._router.navigateByUrl('/subscription-payment?companyId=' + resp.error);
-                }
-                else {
-                    this._router.navigate(['/home']);
-                }
-            } });
     }
     onLogOutButtonCLick() {
         this._authService.unauthorize();
