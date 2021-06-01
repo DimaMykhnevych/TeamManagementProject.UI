@@ -9240,25 +9240,33 @@ class IdentityService {
     }
     getRegisterUrl() {
         const requestUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.register;
-        const returnUrl = `${window.location.origin}/home`;
+        // const returnUrl = `${window.location.origin}/home`;
+        const returnUrl = 'https://dimamykhnevych.github.io/TeamManagementProject.UI/home';
         return `${requestUrl}?returnUrl=${returnUrl}`;
     }
     getLoginUrl() {
         const requestUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.login;
-        const returnUrl = `${window.location.origin}/home`;
+        // const returnUrl = `${window.location.origin}/home`;
+        const returnUrl = 'https://dimamykhnevych.github.io/TeamManagementProject.UI/home';
         return `${requestUrl}?returnUrl=${returnUrl}`;
     }
     getUser() {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getUser, { withCredentials: true });
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getUser, {
+            withCredentials: true,
+        });
     }
     getUsers() {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getUsers, { withCredentials: true });
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getUsers, {
+            withCredentials: true,
+        });
     }
     makeAdmin(idParameter) {
         return this.http.put(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.makeAdmin + `/${idParameter}`, {}, { withCredentials: true });
     }
     getTeamMembers() {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getTeam, { withCredentials: true });
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiRoutes.identity.getTeam, {
+            withCredentials: true,
+        });
     }
 }
 IdentityService.ɵfac = function IdentityService_Factory(t) { return new (t || IdentityService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
@@ -9266,7 +9274,7 @@ IdentityService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineI
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](IdentityService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: 'root',
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
 
