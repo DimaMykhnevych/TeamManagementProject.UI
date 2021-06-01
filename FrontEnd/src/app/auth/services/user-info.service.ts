@@ -35,4 +35,8 @@ export class UserInfoService {
 
     return loadSubject.asObservable();
   }
+
+  public isAvailable(){
+    return this.httpClient.get(environment.apiRoutes.companies.isAvailable, {withCredentials: true});
+  }
 }
