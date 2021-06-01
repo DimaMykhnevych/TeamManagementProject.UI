@@ -74,7 +74,7 @@ export class ArticleCreationComponent implements OnInit, IArticleOperation {
       .subscribe({
         next: (response: ArticleModel) => {
           message = 'The article was successfully saved!';
-          this.router.navigateByUrl(`article/${response.id}`);
+          this.router.navigateByUrl(`home`);
           this.appstate.articlesChanged.next(true);
         },
         error: (errors: HttpErrorResponse) => {
