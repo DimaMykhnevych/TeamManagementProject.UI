@@ -1,41 +1,13 @@
 .main {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
-footer{
+footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
   bottom: 0;
   margin-top: auto;
   width: 100%;
   left: 0;
   text-align: center;
-}
-@media all and (max-width: 1920px)and (min-width:1200px){
-  .footer{
-margin-top: 300px;
-  }
-}
-@media all and (max-width: 1200px)and (min-width:992px){
-  .footer{
-margin-top: 300px;
-  }
-}
-@media all and (max-width: 992px)and (min-width:768px){
-  .footer{
-margin-top: 300px;
-  }
-}
-@media all and (max-width: 768px)and (min-width:540px){
-  .footer{
-margin-top: 170px;
-  }
-}
-@media all and (max-width: 540px)and (min-width:327px){
-  .footer{
-margin-top: 150px;
-  }
-}
-@media all and (max-width: 327px)and (min-width:200px){
-  .footer{
-margin-top: 140px;
-  }
+  position: fixed;
 }

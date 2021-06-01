@@ -1,6 +1,6 @@
 .main {
   padding-top: 100px;
-
+  padding-bottom: 100px;
 }
 .line {
   background-color: black;
@@ -21,29 +21,29 @@
   background-color: rgb(207, 239, 243);
   border-radius: 5px;
 }
-.blockCenter-second{
+.blockCenter-second {
   margin-top: -20px;
 }
-@media screen and (min-device-width: 280px){
-  .main{
+@media screen and (min-device-width: 280px) {
+  .main {
     width: auto;
     margin-right: 20px;
   }
 }
-@media screen and (min-width: 540px){
-  .mat{
+@media screen and (min-width: 540px) {
+  .mat {
     width: 100%;
   }
 }
-@media screen and (min-width: 250px){
-  .blockCenter{
-   text-align: center;
+@media screen and (min-width: 250px) {
+  .blockCenter {
+    text-align: center;
   }
-  .mat{
+  .mat {
     width: 100%;
   }
 }
-button:hover{
+button:hover {
   box-shadow: 2px 2px 7px 2px #232c5e;
   transform: translateY(2px);
 }
@@ -54,29 +54,5 @@ button:hover{
   width: 100%;
   left: 0;
   text-align: center;
-}
-@media all and (max-width: 1200px)and (min-width:992px){
-  .footer{
-margin-top: 165px;
-  }
-}
-@media all and (max-width: 992px)and (min-width:768px){
-  .footer{
-margin-top: 100px;
-  }
-}
-@media all and (max-width: 768px)and (min-width:540px){
-  .footer{
-margin-top: 80px;
-  }
-}
-@media all and (max-width: 540px)and (min-width:327px){
-  .footer{
-margin-top: 70px;
-  }
-}
-@media all and (max-width: 327px)and (min-width:200px){
-  .footer{
-margin-top: 50px;
-  }
+  position: fixed;
 }

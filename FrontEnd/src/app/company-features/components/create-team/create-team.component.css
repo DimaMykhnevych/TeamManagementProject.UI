@@ -1,5 +1,6 @@
 .main {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .line {
@@ -41,8 +42,9 @@
   width: 100%;
   left: 0;
   text-align: center;
+  position: fixed;
 }
-@media all and (max-width: 1920px)and (min-width:1200px) {
+@media all and (max-width: 1920px) and (min-width: 1200px) {
   .container {
     display: flex;
     flex-direction: row;
@@ -63,7 +65,7 @@
     width: 50%;
   }
 }
-@media (max-width: 1200px)and (min-width:992px) {
+@media (max-width: 1200px) and (min-width: 992px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -90,7 +92,7 @@
     margin-top: 60px;
   }
 }
-@media (max-width: 992px)and (min-width:768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -117,7 +119,7 @@
     margin-top: 20px;
   }
 }
-@media (max-width: 768px)and (min-width:574px) {
+@media (max-width: 768px) and (min-width: 574px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -143,9 +145,8 @@
   .thirdSection {
     margin-top: 20px;
   }
-
 }
-@media (max-width: 574px)and (min-width:540px) {
+@media (max-width: 574px) and (min-width: 540px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -171,9 +172,8 @@
   .thirdSection {
     margin-top: 20px;
   }
-
 }
-@media (max-width: 540px)and (min-width:455px) {
+@media (max-width: 540px) and (min-width: 455px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@
     margin-top: 20px;
   }
 }
-@media (max-width: 455px)and (min-width:337px) {
+@media (max-width: 455px) and (min-width: 337px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -226,9 +226,8 @@
   .thirdSection {
     margin-top: 20px;
   }
-
 }
-@media (max-width: 337px)and (min-width:270px) {
+@media (max-width: 337px) and (min-width: 270px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -256,11 +255,11 @@
     width: 100%;
     margin-left: 5px;
   }
-  .form-wrapper{
+  .form-wrapper {
     margin-left: -20px;
   }
 }
-.button1:hover{
+.button1:hover {
   box-shadow: 2px 2px 7px 2px #232c5e;
   transform: translateY(2px);
 }

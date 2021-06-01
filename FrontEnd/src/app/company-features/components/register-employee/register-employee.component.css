@@ -1,5 +1,6 @@
 .main {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 .line {
   background-color: black;
@@ -16,35 +17,34 @@
   padding: 15px;
   background-color: azure;
   border-radius: 10px;
-  
 }
-@media screen and (max-width: 337px)and (min-width:327px){
-.wrap{
-  margin-left: 45px;
-  margin-top: -80px;
+@media screen and (max-width: 337px) and (min-width: 327px) {
+  .wrap {
+    margin-left: 45px;
+    margin-top: -80px;
+  }
 }
-}
-.container{
+.container {
   text-align: center;
 }
-mat-form-field{
+mat-form-field {
   width: auto;
 }
-@media all and(max-width:270px){
-  .container{
+@media all and(max-width:270px) {
+  .container {
     width: 100%;
   }
 }
-button:hover{
+button:hover {
   box-shadow: 2px 2px 7px 2px #232c5e;
   transform: translateY(2px);
 }
-.footer{
+.footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
   bottom: 0;
   margin-top: 80px;
   width: 100%;
   left: 0;
   text-align: center;
+  position: fixed;
 }
-

@@ -1,4 +1,5 @@
-const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
+// const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
+const API_BASE_URL = 'https://localhost:44372/v1';
 
 export const environment = {
   production: false,

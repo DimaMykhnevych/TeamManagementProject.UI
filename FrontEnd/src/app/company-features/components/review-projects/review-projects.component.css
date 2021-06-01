@@ -1,5 +1,6 @@
 .main {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 .footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
@@ -8,6 +9,7 @@
   width: 100%;
   left: 0;
   text-align: center;
+  position: fixed;
 }
 
 @media all and(max-width:347px) {

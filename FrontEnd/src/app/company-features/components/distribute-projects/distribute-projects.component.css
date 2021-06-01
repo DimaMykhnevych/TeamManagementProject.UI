@@ -1,5 +1,6 @@
 .main {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .line {
@@ -18,134 +19,125 @@
   background-color: azure;
   border-radius: 10px;
 }
-.footer{
+.footer {
   background: linear-gradient(180deg, #505250, #8e8f91);
   bottom: 0;
   margin-top: 290px;
   width: 100%;
   left: 0;
   text-align: center;
+  position: fixed;
 }
 
-@media screen and (max-width: 992px)and (min-width:768px){
- .container{
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
- }
- .footer{
-   margin-top: 190px;
- }
- 
- mat-form-field{
-  width: 100%;
-
-}
- .firstSection{
-   width: 100%;
- }
- .secondSection{
-  width: 100%;
-}
-  
-}
- @media screen and (max-width: 1920px) and (min-width:992px){
-  .container{
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .footer{
+  .footer {
+    margin-top: 190px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1920px) and (min-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer {
     margin-top: 220px;
   }
-  
-  .firstSection{
+
+  .firstSection {
     width: 100%;
   }
-  .secondSection{
-   width: 100%;
- }
- mat-form-field{
-  width: 100%;
-
+  .secondSection {
+    width: 100%;
+  }
+  mat-form-field {
+    width: 100%;
+  }
 }
-   
- }
 
- @media screen and (max-width: 768px)and (min-width:526px){
-  .container{
+@media screen and (max-width: 768px) and (min-width: 526px) {
+  .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .footer{
+  .footer {
     margin-top: 150px;
   }
-  mat-form-field{
-    width: 100%;
-  
-  }
-  .firstSection{
+  mat-form-field {
     width: 100%;
   }
-  .secondSection{
-   width: 100%;
- }
-   
- }
- @media screen and (max-width: 526px)and (min-width:370px){
-  .container{
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 526px) and (min-width: 370px) {
+  .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .footer{
+  .footer {
     margin-top: 140px;
   }
-  mat-form-field{
-    width: 100%;
-  
-  }
-  .firstSection{
+  mat-form-field {
     width: 100%;
   }
-  .secondSection{
-   width: 100%;
- }
-   
- } 
- @media screen and (max-width: 370px)and (min-width:200px){
-  .container{
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 370px) and (min-width: 200px) {
+  .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .footer{
+  .footer {
     margin-top: 120px;
   }
-  mat-form-field{
-    width: 100%;
-  
-  }
-  .firstSection{
+  mat-form-field {
     width: 100%;
   }
-  .secondSection{
-   width: 100%;
- }
-   
- } 
- button:hover{
+  .firstSection {
+    width: 100%;
+  }
+  .secondSection {
+    width: 100%;
+  }
+}
+button:hover {
   box-shadow: 2px 2px 7px 2px #232c5e;
   transform: translateY(2px);
 }
