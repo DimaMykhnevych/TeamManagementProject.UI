@@ -28,6 +28,16 @@ export class NavbarComponent implements OnInit {
         this._router.navigate(['']);
       }
     });
+
+    this._userInfoService.isAvailable().subscribe({next: () => {
+    }, error : (resp) => {
+      if(resp.error != ""){
+        this._router.navigateByUrl('/subscription-payment?companyId=' + resp.error);
+      }
+      else {
+        this._router.navigate(['/home']);
+      }
+    }})
   }
 
   public onLogOutButtonCLick(): void {

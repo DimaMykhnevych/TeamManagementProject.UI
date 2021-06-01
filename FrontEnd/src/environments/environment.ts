@@ -45,6 +45,7 @@ export const environment = {
     companies: {
       post: `${API_BASE_URL}/companies`,
       get: `${API_BASE_URL}/companies`,
+      isAvailable: `${API_BASE_URL}/companies/isAvailable`
     },
     subscriptionPlans: {
       get: `${API_BASE_URL}/subscription-plans`,
