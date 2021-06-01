@@ -8,7 +8,7 @@
         width="20"
         height="20"
         fill="currentColor"
-        class="bi bi-gear"
+        class="bi bi-gear log"
         viewBox="0 0 16 16"
       >
         <path
@@ -28,7 +28,7 @@
     </div> -->
     <div class="btn1">
       <button
-        class="btn nav-btn2"
+        class="btn btn1  nav-btn2"
         *ngIf="isUserNull"
         routerLink="company-registration"
       >
@@ -38,7 +38,7 @@
 
     <div class="btn2">
       <button
-        class="btn nav-btn1"
+        class="btn btn1 btn5 nav-btn1"
         (click)="onSignInClick()"
         [disabled]="isSigninLoading"
       >
@@ -91,8 +91,8 @@
       <div class="carousel-inner" style="margin-top: -30px">
         <div class="carousel-item active">
           <img
-            class="d-block w-100"
-            src="assets/images/1slide.jpg "
+            class="d-block w-100 slider-image"
+            src="assets/images/2slide.jpg "
             alt="First slide"
           />
           <h5
@@ -106,11 +106,11 @@
           </h5>
           <p style="text-align: center">You are deciding</p>
         </div>
-        <div style="margin-top: 10px" class="carousel-item">
+        <div class="carousel-item">
           <img
-            style="width: 496px; height: 330.66px"
-            class="d-block w-100"
-            src="assets/images/2slide.jpg "
+            style="height: auto;"
+            class="d-block w-100 slider-image"
+            src="assets/images/1slide.jpg "
             alt="Second slide"
           />
           <h5 style="text-align: center; color: rgb(244, 112, 56)">
@@ -119,8 +119,8 @@
           <p style="text-align: center">You are deciding</p>
         </div>
         <div class="carousel-item">
-          <img
-            class="d-block w-100"
+          <img 
+            class="d-block w-100 slider-image"
             src="assets/images/3slide.jpg "
             alt="Third slide"
           />
