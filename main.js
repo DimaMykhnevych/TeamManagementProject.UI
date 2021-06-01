@@ -10808,8 +10808,8 @@ WelcomePageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdef
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
-const API_BASE_URL = 'https://localhost:44372/v1';
+const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
+// const API_BASE_URL = 'https://localhost:44372/v1';
 const environment = {
     production: false,
     apiRoutes: {
@@ -10959,8 +10959,8 @@ const environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
-const API_BASE_URL = 'https://localhost:44372/v1';
+const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
+// const API_BASE_URL = 'https://localhost:44372/v1';
 const environment = {
     production: false,
     apiRoutes: {
