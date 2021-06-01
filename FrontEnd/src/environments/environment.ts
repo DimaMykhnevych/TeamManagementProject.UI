@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://localhost:44372/v1';
+const API_BASE_URL = 'https://teammanagement.azurewebsites.net/v1';
 
 export const environment = {
   production: false,
@@ -45,7 +45,7 @@ export const environment = {
     companies: {
       post: `${API_BASE_URL}/companies`,
       get: `${API_BASE_URL}/companies`,
-      isAvailable: `${API_BASE_URL}/companies/isAvailable`
+      isAvailable: `${API_BASE_URL}/companies/isAvailable`,
     },
     subscriptionPlans: {
       get: `${API_BASE_URL}/subscription-plans`,

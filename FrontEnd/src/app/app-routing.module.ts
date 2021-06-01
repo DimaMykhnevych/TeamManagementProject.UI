@@ -109,7 +109,6 @@ const routes: Routes = [
         component: ArticleCreationComponent,
         canActivate: [AdminGuard],
       },
-      { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
       { path: 'accessdenied/:reason', component: AccessDeniedComponent },
       {
         path: 'article/:id/edit',
